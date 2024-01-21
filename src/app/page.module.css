@@ -41,7 +41,6 @@
   box-shadow: 0px 0px 20px light-blue;
   rotate: -2deg;
   animation: fadeIn linear 2s;
-
 }
 
 .title {
@@ -53,7 +52,14 @@
 .text {
   font-size: 1.5rem;
   text-align: center;
-  animation: fadeIn linear 2s 0.5s both,slideRight 1.5s 0.5s both;
+}
+
+.textGroup {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn linear 2s 0.5s both, slideRight 1.5s 0.5s both;
 }
 
 .chevron {
@@ -86,7 +92,7 @@
     transform: translateX(-80px);
   }
   to {
-    transform: translateX(0px)
+    transform: translateX(0px);
   }
 }
 
@@ -95,7 +101,7 @@
     transform: translateX(80px);
   }
   to {
-    transform: translateX(0px)
+    transform: translateX(0px);
   }
 }
 

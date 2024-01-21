@@ -1,0 +1,12 @@
+{
+  "navigation": {
+    "home": "home",
+    "cv": "cv",
+    "projects": "projekte"
+  },
+  "introduction": {
+    "greeting": "Grüzi, Ich heisse John",
+    "jobTitle1": "Informatik-Ingenieur",
+    "jobTitle2": "& Engineering Manager"
+  }
+}

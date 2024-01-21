@@ -1,52 +1,5 @@
-@value theme: './theme.css';
-@value navy, blue, light-blue, pale-blue from theme;
-@value spacing-xs, spacing-sm, spacing-md, spacing-xl from theme;
-@value header-height from theme;
-
 .body {
   background-color: pale-blue;
   position: relative;
   overflow: hidden;
-  
-}
-
-.header {
-  position: fixed;
-  height: header-height;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  background-color: pale-blue;
-  z-index: 2;
-  box-shadow: 0px 20px 40px 1px pale-blue;
-}
-
-.nav {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  height: 40px;
-  width: 80%;
-  background-color: blue;
-  border-radius: 30px;
-  box-shadow: 0px 3px 5px 1px #888888;
-  vertical-align: middle;
-  animation: fadeIn 2s 2s both
-}
-
-.link {
-  padding: spacing-xs spacing-sm;
-  color: pale-blue;
-  font-size: 1.2rem;
-  text-shadow: 0px 2px 2px black;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
 }

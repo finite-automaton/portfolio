@@ -2,8 +2,10 @@ import type { Metadata } from "next";
 import { Neuton } from "next/font/google";
 import "./globals.css";
 import styles from "./layout.module.css";
+import { Navigation } from "./components/Navigation";
+import { Provider } from "./components/Provider";
 
-const forum = Neuton({ subsets: ["latin"], weight:"400" });
+const forum = Neuton({ subsets: ["latin"], weight: "400" });
 
 export const metadata: Metadata = {
   title: "John Fletcher's personal site.",
@@ -18,14 +20,12 @@ export default function RootLayout({
   return (
     <html lang="en" className={forum.className}>
       <body className={styles.body}>
-        <header className={styles.header}>
-          <nav className={styles.nav} >
-            <a href="/" className={styles.link}>HOME</a>
-            <a href="/" className={styles.link}>CV</a>
-            <a href="/" className={styles.link}>PROJECTS</a>
-          </nav>
-        </header>
-        {children}
+        <Provider>
+          <>
+            <Navigation />
+            {children}
+          </>
+        </Provider>
       </body>
     </html>
   );

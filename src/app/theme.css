@@ -1,0 +1,13 @@
+/* colours */
+
+@value blue: #3468C0;
+@value light-blue: #B4D4FF;
+@value pale-blue: #EEF5FF;
+
+@value spacing-xs: 2px;
+@value spacing-sm: 4px;
+@value spacing-md: 8px;
+@value spacing-lg: 16px;
+@value spacing-xl: 32px;
+
+@value header-height: 100px;

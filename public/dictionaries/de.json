@@ -8,5 +8,9 @@
     "greeting": "Grüzi, Ich heisse John",
     "jobTitle1": "Informatik-Ingenieur",
     "jobTitle2": "& Engineering Manager"
+  },
+  "bio": {
+    "one": "Bei der Arbeit liebe ich es, Dinge zu erschaffen, Probleme zu lösen und mit Menschen zusammenzuarbeiten.",
+    "two": "Außerhalb der Arbeit gehe ich gerne wandern und verbringe Zeit mit meiner Familie."
   }
 }

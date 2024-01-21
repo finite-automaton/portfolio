@@ -1,0 +1,13 @@
+@value theme: "@/app/theme.css";
+@value spacing-xl from theme;
+
+.textGroup {
+  display: flex;
+  flex-direction: column;
+  padding: spacing-xl;
+  gap: spacing-xl;
+}
+
+.text {
+  font-size: 2rem;
+}

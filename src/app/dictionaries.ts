@@ -14,7 +14,7 @@ export enum LANGS {
   DE = "de",
 }
 
-const dictionaries: Record<string, object> = {
+const dictionaries: Record<string, Dictionary> = {
   de: de,
   en: en,
 };

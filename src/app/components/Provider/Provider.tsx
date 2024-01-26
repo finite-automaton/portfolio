@@ -1,7 +1,7 @@
 "use client";
 
 import { LANGS } from "@/app/dictionaries";
-import { createContext, useContext, useState } from "react";
+import { createContext, useState } from "react";
 
 export const TranslationContext = createContext({
   currentLang: LANGS.EN,

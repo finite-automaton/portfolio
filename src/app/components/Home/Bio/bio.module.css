@@ -1,13 +1,24 @@
 @value theme: "@/app/theme.css";
-@value spacing-xl from theme;
+@value color-text from theme;
+@value spacing-xl, spacing-xxl from theme;
+
+.section {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  scroll-snap-align: center;
+  padding-left: spacing-xxl;
+}
 
 .textGroup {
   display: flex;
   flex-direction: column;
-  padding: spacing-xl;
-  gap: spacing-xl;
+  gap: spacing-xxl;
 }
 
 .text {
+  color: color-text;
   font-size: 2rem;
 }

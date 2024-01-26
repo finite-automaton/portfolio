@@ -1,5 +1,5 @@
 import Image from "next/image";
-import styles from "@/app/page.module.css";
+import styles from "./intro.module.css";
 import profilePic from "../../../../../public/profile.png";
 import { useTranslation } from "@/app/hooks/useTranslation";
 

@@ -1,5 +1,8 @@
+@value theme: './theme.css';
+@value color-bg from theme;
+
 .body {
-  background-color: pale-blue;
+  background-color: color-bg;
   position: relative;
   overflow: hidden;
 }

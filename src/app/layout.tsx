@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import { Neuton } from "next/font/google";
+import { Comfortaa } from "next/font/google";
 import "./globals.css";
 import styles from "./layout.module.css";
 import { Navigation } from "./components/Navigation";
 import { Provider } from "./components/Provider";
 
-const forum = Neuton({ subsets: ["latin"], weight: "400" });
+const forum = Comfortaa({ subsets: ["latin"], weight: "400" });
 
 export const metadata: Metadata = {
   title: "John Fletcher's personal site.",

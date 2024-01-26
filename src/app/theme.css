@@ -1,13 +1,18 @@
 /* colours */
 
-@value blue: #3468C0;
-@value light-blue: #B4D4FF;
-@value pale-blue: #EEF5FF;
+@value colour-bg: #082032;
+@value primary: #54A4AF;
+@value secondary: #ECBC55;
+@value shade: #535474;
+@value color-text: white;
 
 @value spacing-xs: 2px;
 @value spacing-sm: 4px;
 @value spacing-md: 8px;
 @value spacing-lg: 16px;
 @value spacing-xl: 32px;
+@value spacing-xxl: 48px;
+@value spacing-xxxl: 64px;
 
-@value header-height: 100px;
+
+@value header-height: 120px;

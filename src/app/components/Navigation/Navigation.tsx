@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useState } from "react";
 
 import styles from "./navigation.module.css";
@@ -15,7 +14,6 @@ export const Navigation = () => {
   const MenuIcon = ({
     fill = "white",
     stroke = "white",
-    className,
     onClick,
   }: {
     fill?: string;
@@ -27,7 +25,6 @@ export const Navigation = () => {
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 448 512"
-        className={className}
         onClick={onClick}
       >
         <path
@@ -41,59 +38,67 @@ export const Navigation = () => {
 
   return (
     <>
-      {isNavOpen && (
-        <>
+      <div
+        className={`${styles.menuIconWrapper} ${
+          isNavOpen ? styles.menuIconOpen : styles.menuIconClose
+        }`}
+      >
+        <MenuIcon
+          stroke={isNavOpen ? "white" : "#ECBC55"}
+          fill={isNavOpen ? "white" : "#ECBC55"}
+          onClick={() => setIsNavOpen((isOpen) => !isOpen)}
+        />
+      </div>
+      <>
+        {isNavOpen && (
           <div
             className={styles.overlay}
             onClick={() => setIsNavOpen((isOpen) => !isOpen)}
           />
-          <nav
-            className={`${styles.nav} ${
-              isNavOpen ? styles.navExpanded : styles.navCollapsed
-            }`}
-          >
+        )}
+        <nav className={`${isNavOpen ? styles.nav : styles.navClosed}`}>
+          <ul className={styles.navList}>
+            <li>
               <a href="/" className={styles.link}>
                 {langDict.navigation.home}
               </a>
+            </li>
+            <li>
               <a href="/" className={styles.link}>
                 {langDict.navigation.cv}
               </a>
+            </li>
+            <li>
               <a href="/" className={styles.link}>
                 {langDict.navigation.projects}
               </a>
-              <div className={styles.langSelector}>
-                <button
-                  className={`${styles.langButton} ${
-                    currentLang === LANGS.EN && styles.active
-                  }`}
-                  onClick={() => {
-                    setCurrentLang(LANGS.EN);
-                  }}
-                >
-                  EN
-                </button>{" "}
-                /{" "}
-                <button
-                  className={`${styles.langButton} ${
-                    currentLang === LANGS.DE && styles.active
-                  }`}
-                  onClick={() => {
-                    setCurrentLang(LANGS.DE);
-                  }}
-                >
-                  DE
-                </button>
-              </div>
-          </nav>
-        </>
-      )}
-
-      <MenuIcon
-        stroke={isNavOpen ? "white" : "#ECBC55"}
-        fill={isNavOpen ? "white" : "#ECBC55"}
-        className={`${styles.menuIcon} ${isNavOpen && styles.rotateForwards}`}
-        onClick={() => setIsNavOpen((isOpen) => !isOpen)}
-      />
+            </li>
+            <li className={styles.langSelector}>
+              <button
+                className={`${styles.langButton} ${
+                  currentLang === LANGS.EN && styles.active
+                }`}
+                onClick={() => {
+                  setCurrentLang(LANGS.EN);
+                }}
+              >
+                EN
+              </button>{" "}
+              /{" "}
+              <button
+                className={`${styles.langButton} ${
+                  currentLang === LANGS.DE && styles.active
+                }`}
+                onClick={() => {
+                  setCurrentLang(LANGS.DE);
+                }}
+              >
+                DE
+              </button>
+            </li>
+          </ul>
+        </nav>
+      </>
     </>
   );
 };

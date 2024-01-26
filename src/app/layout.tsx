@@ -5,7 +5,7 @@ import styles from "./layout.module.css";
 import { Navigation } from "./components/Navigation";
 import { Provider } from "./components/Provider";
 
-const forum = Comfortaa({ subsets: ["latin"], weight: "400" });
+const comfortaa = Comfortaa({ subsets: ["latin"], weight: "400" });
 
 export const metadata: Metadata = {
   title: "John Fletcher's personal site.",
@@ -18,7 +18,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={forum.className}>
+    <html lang="en" className={comfortaa.className}>
       <body className={styles.body}>
         <Provider>
           <>

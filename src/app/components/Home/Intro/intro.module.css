@@ -1,0 +1,79 @@
+@value theme: "@/app/theme.css";
+@value spacing-xl, spacing-xxxl from theme;
+
+.profileWrapper {
+  display: flex;
+  gap: spacing-xxxl;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.profilePicture {
+  height: 200px;
+  width: 200px;
+  border-radius: 100%;
+  rotate: -2deg;
+}
+
+.section {
+  height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  scroll-snap-align: center;
+  overflow-x: hidden;
+
+  padding-right: spacing-xl;
+  padding-left: spacing-xl;
+}
+
+.title {
+  font-size: 2rem;
+  align-self: top;
+  animation: fadeIn linear 2s;
+  color: white;
+  text-align: center;
+}
+
+.text {
+  font-size: 1.5rem;
+  text-align: center;
+  color: white;
+}
+
+.textGroup {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn linear 2s 2s both;
+
+}
+
+.chevron {
+  position: absolute;
+  bottom: 32px;
+  animation: fadeIn 2s 2s both, oscillate 3s 2s ease infinite;
+}
+
+@keyframes oscillate {
+  0,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(20px);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

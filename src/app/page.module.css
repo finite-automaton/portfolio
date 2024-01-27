@@ -1,11 +1,6 @@
-@value theme: './theme.css';
-@value spacing-xl from theme;
-@value header-height from theme;
-@value colour-bg, light-blue, pale-blue from theme;
-
 .main {
   overflow: scroll;
   scroll-snap-type: y mandatory;
   height: 100vh;
-  background-color: colour-bg;
+  background-color: var(--colour-bg);
 }

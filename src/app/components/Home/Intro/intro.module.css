@@ -1,9 +1,6 @@
-@value theme: "@/app/theme.css";
-@value spacing-xl, spacing-xxxl from theme;
-
 .profileWrapper {
   display: flex;
-  gap: spacing-xxxl;
+  gap: var(--spacing-xxxl);
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -26,22 +23,22 @@
   scroll-snap-align: center;
   overflow-x: hidden;
 
-  padding-right: spacing-xl;
-  padding-left: spacing-xl;
+  padding-right: var(--spacing-xl);
+  padding-left: var(--spacing-xl);
 }
 
 .title {
   font-size: 2rem;
   align-self: top;
   animation: fadeIn linear 2s;
-  color: white;
+  color: var(--colour-text);
   text-align: center;
 }
 
 .text {
   font-size: 1.5rem;
   text-align: center;
-  color: white;
+  color: var(--colour-text);
 }
 
 .textGroup {
@@ -50,13 +47,14 @@
   justify-content: center;
   align-items: center;
   animation: fadeIn linear 2s 2s both;
-
 }
 
 .chevron {
   position: absolute;
   bottom: 32px;
-  animation: fadeIn 2s 2s both, oscillate 3s 2s ease infinite;
+  animation:
+    fadeIn 2s 2s both,
+    oscillate 3s 2s ease infinite;
 }
 
 @keyframes oscillate {

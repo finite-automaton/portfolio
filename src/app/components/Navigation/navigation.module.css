@@ -1,39 +1,35 @@
-@value theme: './../../theme.css';
-@value colour-bg, primary, secondary, color-text from theme;
-@value spacing-xs, spacing-sm, spacing-md, spacing-lg, spacing-xl, spacing-xxl, spacing-xxxl  from theme;
-@value header-height from theme;
-
 .navClosed {
   transform-origin: 0 0;
   transform: scale(0);
   height: 0;
+  z-index: 11;
 }
 
 .nav {
   position: absolute;
-  left: spacing-xl;
+  left: var(--spacing-xl);
   top: 104px;
   z-index: 11;
 
-  padding: spacing-xl;
-  padding-left: spacing-lg;
+  padding: var(--spacing-xl);
+  padding-left: var(--spacing-lg);
 
-  background-color: secondary;
+  background-color: var(--colour-secondary);
   border-radius: 20px;
 
   transform-origin: top left;
   transform: scale(1);
-  transition: 0.5s;
+  transition: 0.4s;
 }
 
 .navList {
   display: flex;
   font-size: 1.5rem;
   flex-direction: column;
-  gap: spacing-lg;
+  gap: var(--spacing-lg);
   text-shadow: 0px 2px 2px black;
   text-transform: uppercase;
-  color: color-text;
+  color: var(--colour-text);
 }
 
 .overlay {
@@ -55,12 +51,12 @@
 
 .menuIconOpen {
   transform: rotate(-90deg);
-  transition: 0.5s linear;
+  transition: 0.2s linear;
 }
 
 .menuIconClose {
   transform: rotate(-180deg);
-  transition: 0.5s linear;
+  transition: 0.2s linear;
 }
 
 .menuIcon:hover {
@@ -87,7 +83,7 @@
 }
 
 .active {
-  color: color-text;
+  color: var(--colour-text);
   text-shadow: 0px 2px 2px black;
 }
 
@@ -119,14 +115,5 @@
   to {
     transform-origin: top left;
     transform: scale(0);
-  }
-}
-
-@keyframes rotateForwards {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(90deg);
   }
 }

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Comfortaa } from "next/font/google";
-import "./globals.css";
+import "./global.css";
 import styles from "./layout.module.css";
 import { Navigation } from "./components/Navigation";
 import { Provider } from "./components/Provider";

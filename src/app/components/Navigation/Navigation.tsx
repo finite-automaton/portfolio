@@ -65,7 +65,7 @@ export const Navigation = () => {
             </li>
             <li>
               <a href="/" className={styles.link}>
-                {langDict.navigation.cv}
+                {langDict.navigation.contact}
               </a>
             </li>
             <li>

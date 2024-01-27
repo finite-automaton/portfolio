@@ -1,0 +1,16 @@
+{
+  "navigation": {
+    "home": "home",
+    "contact": "contact",
+    "projects": "projects"
+  },
+  "introduction": {
+    "greeting": "Hi, I'm John",
+    "jobTitle1": "Software Engineer",
+    "jobTitle2": "& Engineering Manager"
+  },
+  "bio": {
+    "one": "At work I love making things, solving problems and working with people.",
+    "two": "Outside of work, I enjoy hiking and spending time with my family."
+  }
+}

@@ -1,17 +1,4 @@
-.profileWrapper {
-  display: flex;
-  gap: var(--spacing-xxxl);
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.profilePicture {
-  height: 200px;
-  width: 200px;
-  border-radius: 100%;
-  rotate: -2deg;
-}
+/* Shared */
 
 .section {
   height: 100dvh;
@@ -39,14 +26,8 @@
   font-size: 1.5rem;
   text-align: center;
   color: var(--colour-text);
-}
-
-.textGroup {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   animation: fadeIn linear 2s 2s both;
+
 }
 
 .chevron {
@@ -55,6 +36,68 @@
   animation:
     fadeIn 2s 2s both,
     oscillate 3s 2s ease infinite;
+}
+
+/* Mobile */
+
+.profileWrapperMobile {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xxxl);
+  align-items: center;
+  justify-content: center;
+}
+
+.profilePictureMobile {
+  height: 200px;
+  width: 200px;
+  border-radius: 100%;
+  rotate: -2deg;
+  animation: fadeIn linear 2s;
+
+}
+
+.textGroupMobile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Desktop */
+
+.profileWrapperDesktop {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 80%;
+}
+
+.profilePictureDesktop {
+  border-radius: 100%;
+  rotate: -2deg;
+  max-width: 400px;
+  animation: fadeIn linear 2s;
+}
+
+.textGroupDesktop {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-width: 50%;
+  max-width: 50%;
+  /* margin: 0 auto; */
+  padding: var(--spacing-xl);
+}
+
+.titleDesktop {
+  font-size: 2rem;
+  align-self: top;
+  animation: fadeIn linear 2s;
+  color: var(--colour-text);
+  text-align: center;
+  margin-bottom: var(--spacing-xxxl);
 }
 
 @keyframes oscillate {

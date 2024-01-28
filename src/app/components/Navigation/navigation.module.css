@@ -1,12 +1,23 @@
-.navClosed {
+/* mobile nav */
+
+.navMobileClosed {
   transform-origin: 0 0;
   transform: scale(0);
   height: 0;
   z-index: 11;
 }
 
-.nav {
+.navListMobile {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.navMobileOpen {
   position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
   left: var(--spacing-xl);
   top: 104px;
   z-index: 11;
@@ -14,22 +25,13 @@
   padding: var(--spacing-xl);
   padding-left: var(--spacing-lg);
 
-  background-color: var(--colour-secondary);
+  background-color: var(--colour-primary);
   border-radius: 20px;
 
   transform-origin: top left;
   transform: scale(1);
   transition: 0.4s;
-}
-
-.navList {
-  display: flex;
   font-size: 1.5rem;
-  flex-direction: column;
-  gap: var(--spacing-lg);
-  text-shadow: 0px 2px 2px black;
-  text-transform: uppercase;
-  color: var(--colour-text);
 }
 
 .overlay {
@@ -59,13 +61,59 @@
   transition: 0.2s linear;
 }
 
-.menuIcon:hover {
+.menuIconWrapper:hover {
+  cursor: pointer;
+}
+
+/* Desktop Nav */
+
+.navDesktop {
+  position: absolute;
+  gap: var(--spacing-lg);
+  margin: 0 auto;
+  background-color: var(--colour-primary);
+  width: 100%;
+
+  padding: var(--spacing-lg2) var(--spacing-xxxl);
+  font-size: 1.8rem;
+  z-index: 11;
+  box-shadow: 0 4px 60px 50px #082032;
+}
+
+.navListDesktop {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+}
+
+/* Nav Items */
+
+.navItemInactive {
+  font-size: inherit;
+  text-transform: uppercase;
+  color: grey;
+}
+
+.navItemActive {
+  font-size: inherit;
+  text-shadow: 0px 2px 4px black;
+  text-transform: uppercase;
+  color: var(--colour-text);
+}
+
+.navItem:hover {
   cursor: pointer;
 }
 
 .langSelector {
-  margin-right: 15%;
+  margin-top: var(--spacing-lg);
   color: grey;
+}
+
+.langSelectorDesktop {
+  margin-left: auto;
+  margin-right: 0;
+  margin-top: 0;
 }
 
 .langButton {
@@ -86,6 +134,8 @@
   color: var(--colour-text);
   text-shadow: 0px 2px 2px black;
 }
+
+/* Animations */
 
 @keyframes fadeIn {
   from {

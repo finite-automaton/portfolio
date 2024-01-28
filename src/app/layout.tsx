@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import { Comfortaa } from "next/font/google";
 import "./global.css";
 import styles from "./layout.module.css";
-import { Navigation } from "./components/Navigation";
 import { Provider } from "./components/Provider";
+import { Navigation } from "./components/Navigation/Navigation";
 
 const comfortaa = Comfortaa({ subsets: ["latin"], weight: "400" });
 
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   description: "Personal website for John Fletcher.",
 };
 
-export default function RootLayout({
+export default function Layout({
   children,
 }: Readonly<{
   children: React.ReactNode;
@@ -23,7 +23,7 @@ export default function RootLayout({
         <Provider>
           <>
             <Navigation />
-            {children}
+            <main>{children}</main>
           </>
         </Provider>
       </body>

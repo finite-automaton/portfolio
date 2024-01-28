@@ -1,21 +1,17 @@
 "use client";
 
 import { useState } from "react";
-import { usePathname } from "next/navigation";
-
-import { LANGS } from "@/app/dictionaries";
-import { useTranslation } from "@/app/hooks/useTranslation";
 import { useMediaQuery } from "@/app/hooks/useMediaQuery";
 
 import styles from "./navigation.module.css";
 
+import { LANGS } from "@/app/dictionaries";
+import { useTranslation } from "@/app/hooks/useTranslation";
 
-
-export const Navigation = () => {
+export const NavMenu = ({ pathName }: { pathName: string }) => {
   const { currentLang, setCurrentLang, langDict } = useTranslation();
   const [isNavOpen, setIsNavOpen] = useState(false);
   const isMobile = useMediaQuery("(max-width: 772px)");
-  const pathName = usePathname();
 
   const MenuIcon = ({
     fill = "white",
@@ -136,4 +132,4 @@ export const Navigation = () => {
   );
 };
 
-export default Navigation;
+export default NavMenu;

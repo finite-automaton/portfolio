@@ -1,0 +1,99 @@
+.main {
+  overflow: scroll;
+  scroll-snap-type: y mandatory;
+  height: 100dvh;
+  background-color: var(--colour-bg);
+}
+
+.contentWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: center;
+  width: 58%;
+  margin: 160px auto 40px auto;
+  gap: var(--spacing-xxl);
+}
+
+.textInfo {
+  color: var(--colour-text);
+}
+
+.socials {
+  display: flex;
+  flex-direction: row;
+  align-items: end;
+  gap: var(--spacing-lg);
+}
+
+.social:hover {
+  cursor: pointer;
+}
+
+.contactForm {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+  width: 100%;
+}
+
+.input {
+  height: 40px;
+}
+
+.input .messageInput {
+  font-size: 1rem;
+  padding: var(--spacing-lg);
+}
+
+.formLabel {
+  color: var(--colour-text);
+}
+
+.sendButton {
+  width: 120px;
+  height: 40px;
+  margin-top: var(--spacing-lg);
+  border-radius: 10px;
+
+  padding: 2px;
+
+  border-top: solid 2px white;
+  border-left: solid 2px white;
+  border-right: none;
+  border-bottom: none;
+
+  background-color: var(--colour-primary);
+  color: var(--colour-text);
+  text-shadow: 0px 2px 4px black;
+  font-size: 1.5rem;
+  box-shadow: 2px 2px black;
+  text-transform: uppercase;
+}
+
+.sendButton:hover {
+  cursor: pointer;
+}
+
+.sendButton:active {
+  border-top: solid 1px white;
+  border-left: solid 1px white;
+  border-right: solid 1px white;
+  border-bottom: solid 1px white;
+
+}
+
+.input:valid .messageInput:valid {
+  border: 2px solid green;
+}
+
+@media only screen and (max-width: 772px) {
+  .contentWrapper {
+    margin: 120px auto 40px auto;
+    width: 80%;
+  }
+
+  .sendButton {
+    width: 100%;
+  }
+}

@@ -20,6 +20,7 @@
     "eslint": "^8",
     "eslint-config-next": "14.1.0",
     "postcss-modules-values": "^4.0.0",
-    "typescript": "^5"
+    "typescript": "^5",
+    "typescript-plugin-css-modules": "^5.0.2"
   }
 }

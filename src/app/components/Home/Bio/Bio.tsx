@@ -6,9 +6,10 @@ export const Bio = () => {
   return (
     <section className={styles.section}>
       <div className={styles.textGroup}>
-        <p className={styles.text}>{langDict.bio.one}</p>
-        <p className={styles.text}>{langDict.bio.two}</p>
+        <p className={styles.text}>{langDict.bio.work}</p>
       </div>
     </section>
   );
 };
+
+export default Bio;

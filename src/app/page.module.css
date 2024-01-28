@@ -1,6 +1,0 @@
-.main {
-  overflow: scroll;
-  scroll-snap-type: y mandatory;
-  height: 100dvh;
-  background-color: var(--colour-bg);
-}

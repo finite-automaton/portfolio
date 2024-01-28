@@ -11,7 +11,7 @@ import styles from "./page.module.css";
 import { useState } from "react";
 import Link from "next/link";
 
-export const Contact = () => {
+export default function Contact() {
   const { langDict } = useTranslation();
   const [hasSubmittedForm, setHasSubmittedForm] = useState(false);
 
@@ -100,5 +100,3 @@ export const Contact = () => {
     </div>
   );
 };
-
-export default Contact;

@@ -27,15 +27,12 @@
   text-align: center;
   color: var(--colour-text);
   animation: fadeIn linear 2s 2s both;
-
 }
 
 .chevron {
   position: absolute;
   bottom: 32px;
-  animation:
-    fadeIn 2s 2s both,
-    oscillate 3s 2s ease infinite;
+  animation: fadeIn 2s 2s both, oscillate 3s 2s ease infinite;
 }
 
 /* Mobile */
@@ -54,7 +51,6 @@
   border-radius: 100%;
   rotate: -2deg;
   animation: fadeIn linear 2s;
-
 }
 
 .textGroupMobile {
@@ -87,7 +83,6 @@
   align-items: center;
   min-width: 50%;
   max-width: 50%;
-  /* margin: 0 auto; */
   padding: var(--spacing-xl);
 }
 
@@ -98,6 +93,18 @@
   color: var(--colour-text);
   text-align: center;
   margin-bottom: var(--spacing-xxxl);
+}
+
+@media (max-width: 772px) {
+  .profileWrapperDesktop {
+    display: none;
+  }
+}
+
+@media (min-width: 772px) {
+  .profileWrapperMobile {
+    display: none;
+  }
 }
 
 @keyframes oscillate {

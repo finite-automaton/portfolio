@@ -68,6 +68,12 @@
   cursor: pointer;
 }
 
+@media (max-width: 772px) {
+  .navDesktop {
+    display: none;
+  }
+}
+
 /* Desktop Nav */
 
 .navDesktop {
@@ -87,6 +93,14 @@
   display: flex;
   flex-direction: row;
   gap: 40px;
+}
+
+@media (min-width: 772px) {
+  .navMobileOpen,
+  .menuIconWrapper,
+  .navMobileClosed {
+    display: none;
+  }
 }
 
 /* Nav Items */

@@ -5,16 +5,12 @@ import { usePathname } from "next/navigation";
 
 import { LANGS } from "@/app/dictionaries";
 import { useTranslation } from "@/app/hooks/useTranslation";
-import { useMediaQuery } from "@/app/hooks/useMediaQuery";
 
 import styles from "./navigation.module.css";
-
-
 
 export const Navigation = () => {
   const { currentLang, setCurrentLang, langDict } = useTranslation();
   const [isNavOpen, setIsNavOpen] = useState(false);
-  const isMobile = useMediaQuery("(max-width: 772px)");
   const pathName = usePathname();
 
   const MenuIcon = ({
@@ -63,7 +59,7 @@ export const Navigation = () => {
     { href: "/projects", text: langDict.navigation.projects },
   ];
 
-  const MenuItems = () => {
+  const MenuItems = ({ isMobile }: { isMobile: boolean }) => {
     return (
       <ul className={isMobile ? styles.navListMobile : styles.navListDesktop}>
         {navLinks.map((link) => NavItem({ href: link.href, text: link.text }))}
@@ -99,9 +95,9 @@ export const Navigation = () => {
     );
   };
 
-  return isMobile ? (
+  return (
     <>
-      <div
+      <button
         className={`${styles.menuIconWrapper} ${
           isNavOpen ? styles.menuIconOpen : styles.menuIconClose
         }`}
@@ -111,7 +107,7 @@ export const Navigation = () => {
           fill={isNavOpen ? "white" : "#ECBC55"}
           onClick={() => setIsNavOpen((isOpen) => !isOpen)}
         />
-      </div>
+      </button>
       <>
         {isNavOpen && (
           <div
@@ -125,14 +121,14 @@ export const Navigation = () => {
           }`}
         >
           {" "}
-          <MenuItems />
+          <MenuItems isMobile />
         </nav>
       </>
+
+      <nav className={styles.navDesktop}>
+        <MenuItems isMobile={false} />
+      </nav>
     </>
-  ) : (
-    <nav className={styles.navDesktop}>
-      <MenuItems />
-    </nav>
   );
 };
 

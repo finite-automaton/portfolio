@@ -3,7 +3,7 @@
 import Image from "next/image";
 
 import linkedInLogo from "../../../public/linkedin.png";
-import githubLogo from "../../../public/github-mark-white.png"
+import githubLogo from "../../../public/github-mark-white.png";
 import { create } from "@/app/actions";
 
 import { useTranslation } from "../hooks/useTranslation";
@@ -18,7 +18,11 @@ export default function Contact() {
   return (
     <div className={styles.contentWrapper}>
       <div className={styles.socials}>
-        <Link href={"https://www.linkedin.com/in/john-fletcher-4353b976/"}>
+        <Link
+          href={"https://www.linkedin.com/in/john-fletcher-4353b976/"}
+          rel="noopener noreferrer"
+          target="_blank"
+        >
           <Image
             src={linkedInLogo}
             alt={"linkedIn logo"}
@@ -27,9 +31,13 @@ export default function Contact() {
             priority
           />
         </Link>
-        
-        <Link href={"https://github.com/finite-automaton"}>
-        <Image
+
+        <Link
+          href={"https://github.com/finite-automaton"}
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          <Image
             src={githubLogo}
             alt={"github logo"}
             height={40}
@@ -64,7 +72,7 @@ export default function Contact() {
             </label>
             <input
               type="email"
-              name="e-mail"
+              name="email"
               className={styles.input}
               required
             />
@@ -99,4 +107,4 @@ export default function Contact() {
       )}
     </div>
   );
-};
+}

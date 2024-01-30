@@ -6,14 +6,13 @@ import linkedInLogo from "../../../public/linkedin.png";
 import githubLogo from "../../../public/github-mark-white.png";
 import { create } from "@/app/actions";
 
-import { useTranslation } from "../hooks/useTranslation";
 import styles from "./page.module.css";
 import { useContext, useState } from "react";
 import Link from "next/link";
 import { TranslationContext } from "../components/Provider/Provider";
 
 export default function Contact() {
-  const {  currentLangDict: langDict  } =  useContext(TranslationContext);
+  const { currentLangDict: langDict } = useContext(TranslationContext);
   const [hasSubmittedForm, setHasSubmittedForm] = useState(false);
 
   return (

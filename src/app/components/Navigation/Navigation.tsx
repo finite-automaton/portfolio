@@ -4,10 +4,10 @@ import { useContext, useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 
 import { LANGS } from "@/app/dictionaries";
-import { useTranslation } from "@/app/hooks/useTranslation";
 
 import styles from "./navigation.module.css";
 import { TranslationContext } from "../Provider/Provider";
+import Link from "next/link";
 
 export const Navigation = () => {
   const { currentLang, currentLangDict, setCurrentLang } =
@@ -47,14 +47,14 @@ export const Navigation = () => {
   const NavItem = ({ href, text }: { href: string; text: string }) => {
     return (
       <li key={text}>
-        <a
+        <Link
           href={href}
           className={
             pathName === href ? styles.navItemActive : styles.navItemInactive
           }
         >
           {text}
-        </a>
+        </Link>
       </li>
     );
   };

@@ -3,10 +3,11 @@
 import Image from "next/image";
 import styles from "./intro.module.css";
 import profilePic from "../../../../../public/profile.png";
-import { useTranslation } from "@/app/hooks/useTranslation";
+import { useContext } from "react";
+import { TranslationContext } from "../../Provider/Provider";
 
 export const Intro = () => {
-  const { langDict } = useTranslation();
+  const { currentLangDict: langDict } = useContext(TranslationContext);
 
   return (
     <section className={styles.section}>

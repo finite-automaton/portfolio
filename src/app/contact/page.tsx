@@ -8,11 +8,12 @@ import { create } from "@/app/actions";
 
 import { useTranslation } from "../hooks/useTranslation";
 import styles from "./page.module.css";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import Link from "next/link";
+import { TranslationContext } from "../components/Provider/Provider";
 
 export default function Contact() {
-  const { langDict } = useTranslation();
+  const {  currentLangDict: langDict  } =  useContext(TranslationContext);
   const [hasSubmittedForm, setHasSubmittedForm] = useState(false);
 
   return (

@@ -1,8 +1,9 @@
+import { useContext } from "react";
 import styles from "./bio.module.css";
-import { useTranslation } from "@/app/hooks/useTranslation";
+import { TranslationContext } from "../../Provider/Provider";
 
 export const Bio = () => {
-  const { langDict } = useTranslation();
+  const {  currentLangDict: langDict  } =  useContext(TranslationContext);
   return (
     <section className={styles.section}>
       <div className={styles.textGroup}>

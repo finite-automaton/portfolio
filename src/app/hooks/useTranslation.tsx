@@ -1,21 +1,33 @@
 import { Dictionary } from "@/app/dictionaries";
-import { useState, useEffect, useContext } from "react";
+import { useEffect, useContext } from "react";
 import { getLanguageDictionary } from "../actions";
 
-import dictEn from "../../../public/dictionaries/en.json";
 import { TranslationContext } from "@/app/components/Provider/Provider";
 
 export const useTranslation = () => {
-  const [langDict, setLangDict] = useState<Dictionary>(dictEn);
-  const { currentLang, setCurrentLang } = useContext(TranslationContext);
+  const { currentLang, setCurrentLang, currentLangDict, setCurrentLangDict } =
+    useContext(TranslationContext);
+
+  // useEffect(() => {
+  //   const localLang = localStorage.getItem("lang") as LANGS;
+  //   localLang && setCurrentLang(localLang);
+  //   return;
+  // }, []);
 
   useEffect(() => {
+    // if (!localLangLoaded) {
+    //   const localLang = localStorage.getItem("lang") as LANGS;
+    //   localLang && setCurrentLang(localLang);
+    //   setLocalLangLoaded(true);
+    //   return;
+    // }
     const updateLangDict = async () => {
       const langDict: Dictionary = await getLanguageDictionary(currentLang);
-      setLangDict(langDict);
+      setCurrentLangDict(langDict);
+      // localStorage.setItem("lang", currentLang);
     };
     updateLangDict();
   }, [currentLang]);
 
-  return { currentLang, setCurrentLang, langDict };
+  return { currentLang, currentLangDict, setCurrentLang };
 };

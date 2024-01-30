@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 
 import { LANGS } from "@/app/dictionaries";
@@ -8,14 +8,18 @@ import { useTranslation } from "@/app/hooks/useTranslation";
 import { useMediaQuery } from "@/app/hooks/useMediaQuery";
 
 import styles from "./navigation.module.css";
-
-
+import { TranslationContext } from "../Provider/Provider";
 
 export const Navigation = () => {
-  const { currentLang, setCurrentLang, langDict } = useTranslation();
+  const { currentLang, currentLangDict, setCurrentLang } =
+    useContext(TranslationContext);
   const [isNavOpen, setIsNavOpen] = useState(false);
   const isMobile = useMediaQuery("(max-width: 772px)");
   const pathName = usePathname();
+
+  useEffect(() => {
+    console.log('mounted');
+  }, [])
 
   const MenuIcon = ({
     fill = "white",
@@ -58,9 +62,9 @@ export const Navigation = () => {
   };
 
   const navLinks = [
-    { href: "/", text: langDict.navigation.home },
-    { href: "/contact", text: langDict.navigation.contact },
-    { href: "/projects", text: langDict.navigation.projects },
+    { href: "/", text: currentLangDict.navigation.home },
+    { href: "/contact", text: currentLangDict.navigation.contact },
+    { href: "/projects", text: currentLangDict.navigation.projects },
   ];
 
   const MenuItems = () => {

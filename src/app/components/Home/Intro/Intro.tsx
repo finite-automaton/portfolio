@@ -5,9 +5,11 @@ import styles from "./intro.module.css";
 import profilePic from "../../../../../public/profile.png";
 import { useTranslation } from "@/app/hooks/useTranslation";
 import { useMediaQuery } from "@/app/hooks/useMediaQuery";
+import { useContext } from "react";
+import { TranslationContext } from "../../Provider/Provider";
 
 export const Intro = () => {
-  const { langDict } = useTranslation();
+  const {  currentLangDict: langDict  } =  useContext(TranslationContext);
   const isMobile = useMediaQuery("(max-width: 772px)");
 
   return (

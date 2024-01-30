@@ -16,8 +16,12 @@ export async function create(formData: FormData) {
     body: JSON.stringify({
       from: "contact@johnfletcher.ch",
       to: "johnmichaelfletcher@gmail.com",
+      sender: formData.get("name"),
+      senderEmail: formData.get("email"),
       subject: formData.get("subject"),
-      text: "This works!",
+      text: `From: ${formData.get("name")}\nEmail: ${formData.get(
+        "email"
+      )}\n${formData.get("message")}`,
     }),
   });
   console.log("Email sent!");

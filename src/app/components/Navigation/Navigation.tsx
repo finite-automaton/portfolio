@@ -1,13 +1,13 @@
 "use client";
 
 import { useContext, useEffect, useState } from "react";
+import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 import { LANGS } from "@/app/dictionaries";
+import { TranslationContext } from "../Provider/Provider";
 
 import styles from "./navigation.module.css";
-import { TranslationContext } from "../Provider/Provider";
-import Link from "next/link";
 
 export const Navigation = () => {
   const { currentLang, currentLangDict, setCurrentLang } =
@@ -16,8 +16,8 @@ export const Navigation = () => {
   const pathName = usePathname();
 
   useEffect(() => {
-    console.log('mounted');
-  }, [])
+    console.log("mounted");
+  }, []);
 
   const MenuIcon = ({
     fill = "white",

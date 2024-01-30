@@ -1,9 +1,9 @@
 "use client";
 
-import { LANGS, } from "@/app/dictionaries";
 import { createContext, useEffect, useState } from "react";
 import dictEn from "../../../../public/dictionaries/en.json";
 import dictDe from "../../../../public/dictionaries/de.json";
+import { LANGS } from "@/app/dictionaries";
 
 export const TranslationContext = createContext({
   currentLang: LANGS.EN,

@@ -1,10 +1,12 @@
 "use client";
 
-import Image from "next/image";
-import styles from "./intro.module.css";
-import profilePic from "../../../../../public/profile.png";
 import { useContext } from "react";
+import Image from "next/image";
+
+import profilePic from "../../../../../public/profile.png";
 import { TranslationContext } from "../../Provider/Provider";
+
+import styles from "./intro.module.css";
 
 export const Intro = () => {
   const { currentLangDict: langDict } = useContext(TranslationContext);

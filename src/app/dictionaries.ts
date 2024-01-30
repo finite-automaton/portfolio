@@ -1,6 +1,3 @@
-import de from "../../public/dictionaries/de.json";
-import en from "../../public/dictionaries/en.json";
-
 export interface Dictionary {
   [key: string]: NestedDictionary;
 }
@@ -13,10 +10,3 @@ export enum LANGS {
   EN = "en",
   DE = "de",
 }
-
-const dictionaries: Record<string, Dictionary> = {
-  de: de,
-  en: en,
-};
-
-export const getDictionary = (locale: string) => dictionaries[locale];

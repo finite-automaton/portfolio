@@ -1,17 +1,23 @@
 "use client";
 
-import { useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 import { LANGS } from "@/app/dictionaries";
-import { useTranslation } from "@/app/hooks/useTranslation";
+import { TranslationContext } from "../Provider/Provider";
 
 import styles from "./navigation.module.css";
 
 export const Navigation = () => {
-  const { currentLang, setCurrentLang, langDict } = useTranslation();
+  const { currentLang, currentLangDict, setCurrentLang } =
+    useContext(TranslationContext);
   const [isNavOpen, setIsNavOpen] = useState(false);
   const pathName = usePathname();
+
+  useEffect(() => {
+    console.log("mounted");
+  }, []);
 
   const MenuIcon = ({
     fill = "white",
@@ -41,22 +47,22 @@ export const Navigation = () => {
   const NavItem = ({ href, text }: { href: string; text: string }) => {
     return (
       <li key={text}>
-        <a
+        <Link
           href={href}
           className={
             pathName === href ? styles.navItemActive : styles.navItemInactive
           }
         >
           {text}
-        </a>
+        </Link>
       </li>
     );
   };
 
   const navLinks = [
-    { href: "/", text: langDict.navigation.home },
-    { href: "/contact", text: langDict.navigation.contact },
-    { href: "/projects", text: langDict.navigation.projects },
+    { href: "/", text: currentLangDict.navigation.home },
+    { href: "/contact", text: currentLangDict.navigation.contact },
+    { href: "/projects", text: currentLangDict.navigation.projects },
   ];
 
   const MenuItems = ({ isMobile }: { isMobile: boolean }) => {

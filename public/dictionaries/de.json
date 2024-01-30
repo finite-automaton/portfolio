@@ -10,7 +10,16 @@
     "jobTitle2": "& Engineering Manager"
   },
   "bio": {
-    "one": "Bei der Arbeit liebe ich es, Dinge zu erschaffen, Probleme zu lösen und mit Menschen zusammenzuarbeiten.",
-    "two": "Außerhalb der Arbeit gehe ich gerne wandern und verbringe Zeit mit meiner Familie."
+    "work": "I'm a full-stack engineer with experience managing large scale projects and teams in e-commerce, insurance and finance."
+  },
+  "contact": {
+    "linkedin": "Connect with me on linkedIn.",
+    "sendEmail": "Send me an e-mail:",
+    "name": "Name",
+    "email": "E-mail",
+    "subject": "Subject",
+    "message": "Message",
+    "send": "Send",
+    "thanks": "Thanks for getting in touch!"
   }
 }

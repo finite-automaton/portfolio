@@ -72,8 +72,18 @@
 .profilePictureDesktop {
   border-radius: 100%;
   rotate: -2deg;
-  max-width: 400px;
   animation: fadeIn linear 2s;
+}
+
+.profilePictureWrapper {
+  position: relative;
+  width: 100%;
+}
+
+.profilePictureWrapper:after {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
 }
 
 .textGroupDesktop {

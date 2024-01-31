@@ -15,10 +15,6 @@ export const Navigation = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
   const pathName = usePathname();
 
-  useEffect(() => {
-    console.log("mounted");
-  }, []);
-
   const MenuIcon = ({
     fill = "white",
     stroke = "white",

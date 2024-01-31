@@ -23,7 +23,7 @@ export default function Layout({
         <Provider>
           <>
             <Navigation />
-            <main>{children}</main>
+            {children}
           </>
         </Provider>
       </body>

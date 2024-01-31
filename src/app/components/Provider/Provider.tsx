@@ -3,17 +3,17 @@
 import { createContext, useEffect, useState } from "react";
 import dictEn from "../../../../public/dictionaries/en.json";
 import dictDe from "../../../../public/dictionaries/de.json";
-import { LANGS } from "@/app/dictionaries";
+import { LANGS, Dictionary } from "@/app/dictionaries";
 
 export const TranslationContext = createContext({
   currentLang: LANGS.EN,
   setCurrentLang: (lang: LANGS) => {},
-  currentLangDict: dictEn,
+  currentLangDict: dictEn as Dictionary,
 });
 
 export const Provider = ({ children }: { children: JSX.Element }) => {
   const [currentLang, setCurrentLang] = useState(LANGS.EN);
-  const [currentLangDict, setCurrentLangDict] = useState(dictEn);
+  const [currentLangDict, setCurrentLangDict] = useState<Dictionary>(dictEn);
   const [localLangLoaded, setLocalLangLoaded] = useState(false);
 
   useEffect(() => {
@@ -37,9 +37,6 @@ export const Provider = ({ children }: { children: JSX.Element }) => {
     }
   }, [currentLang, localLangLoaded]);
 
-  useEffect(() => {
-    console.log("instantiated!");
-  }, []);
   return (
     <TranslationContext.Provider
       value={{

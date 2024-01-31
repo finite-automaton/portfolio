@@ -1,5 +1,11 @@
 "use server";
 
+import { LANGS, getDictionary } from "./dictionaries";
+
+export async function getLanguageDictionary(language: LANGS) {
+  return getDictionary(language);
+}
+
 export async function create(formData: FormData) {
   await fetch("https://api.resend.com/emails", {
     method: "POST",

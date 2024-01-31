@@ -33,15 +33,15 @@ export const Intro = () => {
         // desktop
       }
       <div className={styles.profileWrapperDesktop}>
-        <Image
-          className={styles.profilePictureDesktop}
-          src={profilePic}
-          alt={"Picture of John Fletcher"}
-          layout="responsive"
-          height={200}
-          width={200}
-          priority
-        />
+        <div className={styles.profilePictureWrapper}>
+          <Image
+            className={styles.profilePictureDesktop}
+            src={profilePic}
+            alt={"Picture of John Fletcher"}
+            fill
+            priority
+          />
+        </div>
         <div className={styles.textGroupDesktop}>
           <h1 className={styles.titleDesktop}>
             {langDict.introduction.greeting}

@@ -28,6 +28,14 @@ export const Intro = () => {
           <p className={styles.text}>{langDict.introduction.jobTitle1}</p>
           <p className={styles.text}>{langDict.introduction.jobTitle2}</p>
         </div>
+        <Image
+          className={styles.chevron}
+          src="/chevron-down-solid.svg"
+          alt="down-facing-chevron"
+          height={50}
+          width={50}
+          priority
+        />
       </div>
       {
         // desktop

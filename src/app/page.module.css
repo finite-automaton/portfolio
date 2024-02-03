@@ -1,5 +1,5 @@
 .container {
   scroll-snap-type: y mandatory;
   overflow: scroll;
-  height: 100dvh;
+  height: calc(100dvh - var(--header-height));
 }

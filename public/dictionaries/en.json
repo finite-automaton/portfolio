@@ -1,8 +1,8 @@
 {
   "navigation": {
-    "home": "home",
-    "contact": "contact",
-    "projects": "projects"
+    "home": "John Fletcher",
+    "contact": "Contact",
+    "projects": "Projects"
   },
   "introduction": {
     "greeting": "Hi, I'm John",

@@ -16,6 +16,7 @@
   --spacing-xxxl: 64px;
 
   --breakpoint-mobile: 772px;
+  --header-height: 104px;
 }
 
 * {

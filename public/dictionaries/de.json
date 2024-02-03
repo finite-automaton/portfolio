@@ -1,8 +1,8 @@
 {
   "navigation": {
-    "home": "home",
-    "contact": "kontakt",
-    "projects": "projekte"
+    "home": "John Fletcher",
+    "contact": "Kontakt",
+    "projects": "Projekte"
   },
   "introduction": {
     "greeting": "Grüzi, Ich heisse John",
@@ -14,12 +14,12 @@
   },
   "contact": {
     "linkedin": "Connect with me on linkedIn.",
-    "sendEmail": "Send me an e-mail:",
+    "sendEmail": "Schicken Sie mir eine E-mail:",
     "name": "Name",
     "email": "E-mail",
-    "subject": "Subject",
-    "message": "Message",
-    "send": "Send",
-    "thanks": "Thanks for getting in touch!"
+    "subject": "Betreff",
+    "message": "Nachrichtentext",
+    "send": "Schicken",
+    "thanks": "Vielen Dank für Ihre Kontaktaufnahme!"
   }
 }

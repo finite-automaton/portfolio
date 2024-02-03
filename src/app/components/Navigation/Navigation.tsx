@@ -1,6 +1,6 @@
 "use client";
 
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -15,31 +15,6 @@ export const Navigation = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
   const pathName = usePathname();
 
-  const MenuIcon = ({
-    fill = "white",
-    stroke = "white",
-    onClick,
-  }: {
-    fill?: string;
-    stroke?: string;
-    className?: string;
-    onClick?: () => void;
-  }) => {
-    return (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 448 512"
-        onClick={onClick}
-      >
-        <path
-          d="M0 96c0-17.7 14.3-32 32-32h384c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zm0 160c0-17.7 14.3-32 32-32h384c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zm448 160c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32h384c17.7 0 32 14.3 32 32z"
-          stroke={stroke}
-          fill={fill}
-        />
-      </svg>
-    );
-  };
-
   const NavItem = ({ href, text }: { href: string; text: string }) => {
     return (
       <li key={text}>
@@ -48,6 +23,9 @@ export const Navigation = () => {
           className={
             pathName === href ? styles.navItemActive : styles.navItemInactive
           }
+          onClick={() => {
+            setIsNavOpen(false);
+          }}
         >
           {text}
         </Link>
@@ -57,79 +35,90 @@ export const Navigation = () => {
 
   const navLinks = [
     { href: "/", text: currentLangDict.navigation.home },
-    { href: "/contact", text: currentLangDict.navigation.contact },
     { href: "/projects", text: currentLangDict.navigation.projects },
+    { href: "/contact", text: currentLangDict.navigation.contact },
   ];
 
-  const MenuItems = ({ isMobile }: { isMobile: boolean }) => {
+  const MenuItems = () => {
     return (
-      <ul className={isMobile ? styles.navListMobile : styles.navListDesktop}>
+      <ul className={styles.navList}>
         {navLinks.map((link) => NavItem({ href: link.href, text: link.text }))}
-        <li
-          className={`${styles.langSelector} ${
-            !isMobile && styles.langSelectorDesktop
-          }`}
-          key={"langSelector"}
-        >
-          <button
-            className={`${styles.langButton} ${
-              currentLang === LANGS.EN && styles.active
-            }`}
-            onClick={() => {
-              setCurrentLang(LANGS.EN);
-            }}
-          >
-            EN
-          </button>{" "}
-          /{" "}
-          <button
-            className={`${styles.langButton} ${
-              currentLang === LANGS.DE && styles.active
-            }`}
-            onClick={() => {
-              setCurrentLang(LANGS.DE);
-            }}
-          >
-            DE
-          </button>
-        </li>
       </ul>
+    );
+  };
+
+  const LangSelector = () => {
+    return (
+      <div className={styles.langSelector}>
+        <button
+          className={`${styles.langButton} ${
+            currentLang === LANGS.EN && styles.active
+          }`}
+          onClick={() => {
+            setCurrentLang(LANGS.EN);
+          }}
+        >
+          EN
+        </button>
+        <p>/</p>
+
+        <button
+          className={`${styles.langButton} ${
+            currentLang === LANGS.DE && styles.active
+          }`}
+          onClick={() => {
+            setCurrentLang(LANGS.DE);
+          }}
+        >
+          DE
+        </button>
+      </div>
     );
   };
 
   return (
     <>
-      <button
-        className={`${styles.menuIconWrapper} ${
-          isNavOpen ? styles.menuIconOpen : styles.menuIconClose
-        }`}
-      >
-        <MenuIcon
-          stroke={isNavOpen ? "white" : "#ECBC55"}
-          fill={isNavOpen ? "white" : "#ECBC55"}
+      {isNavOpen && (
+        <div
+          className={styles.overlay}
           onClick={() => setIsNavOpen((isOpen) => !isOpen)}
         />
-      </button>
-      <>
-        {isNavOpen && (
+      )}
+      <div className={styles.header}>
+        <button
+          className={styles.menuIconWrapper}
+          onClick={() => setIsNavOpen((isOpen) => !isOpen)}
+        >
           <div
-            className={styles.overlay}
-            onClick={() => setIsNavOpen((isOpen) => !isOpen)}
+            className={`${styles.navIconBar} ${
+              isNavOpen && styles.navBarTopOpen
+            }`}
           />
-        )}
+          <div
+            className={`${styles.navIconBar} ${
+              isNavOpen && styles.navBarMiddleOpen
+            }`}
+          />
+          <div
+            className={`${styles.navIconBar} ${
+              isNavOpen && styles.navBarBottomOpen
+            }`}
+          />
+        </button>
         <nav
           className={`${
             isNavOpen ? styles.navMobileOpen : styles.navMobileClosed
           }`}
         >
-          {" "}
-          <MenuItems isMobile />
+          <MenuItems />
         </nav>
-      </>
 
-      <nav className={styles.navDesktop}>
-        <MenuItems isMobile={false} />
-      </nav>
+        <nav className={styles.navDesktop}>
+          <MenuItems />
+        </nav>
+
+        <LangSelector />
+      </div>
     </>
   );
 };

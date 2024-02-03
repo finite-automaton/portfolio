@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import { Comfortaa } from "next/font/google";
+import { Kanit } from "next/font/google";
 import "./global.css";
 import styles from "./layout.module.css";
 import { Provider } from "./components/Provider";
 import { Navigation } from "./components/Navigation/Navigation";
 
-const comfortaa = Comfortaa({ subsets: ["latin"], weight: "400" });
+const kanit = Kanit({ subsets: ["latin"], weight: "400" });
 
 export const metadata: Metadata = {
   title: "John Fletcher's personal site.",
@@ -18,12 +18,12 @@ export default function Layout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={comfortaa.className}>
+    <html lang="en" className={kanit.className}>
       <body className={styles.body}>
         <Provider>
           <>
             <Navigation />
-            {children}
+            <main className={styles.main}>{children}</main>
           </>
         </Provider>
       </body>

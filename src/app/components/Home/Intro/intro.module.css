@@ -3,13 +3,12 @@
 .section {
   position: relative;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   scroll-snap-align: center;
   overflow-x: hidden;
   height: calc(100dvh - var(--header-height));
-  padding: 0 var(--spacing-xl);
+  padding: 0 var(--spacing-xxxl);
 }
 
 .title {
@@ -25,6 +24,7 @@
   text-align: center;
   color: var(--colour-text);
   animation: fadeIn linear 2s 2s both;
+  text-wrap: nowrap;
 }
 
 .chevron {
@@ -38,17 +38,21 @@
 .profileWrapperMobile {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-xxxl);
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  height: calc(100dvh - var(--header-height));
+  padding: var(--spacing-xxxl) 0;
+}
+
+.profilePictureWrapperMobile {
+  position: absolute;
+  bottom: 0;
+  height: 90%;
+  width: 100%;
 }
 
 .profilePictureMobile {
-  height: 200px;
-  width: 200px;
-  border-radius: 100%;
-  rotate: -2deg;
-  animation: fadeIn linear 2s;
+  object-fit: cover;
 }
 
 .textGroupMobile {
@@ -63,25 +67,23 @@
 .profileWrapperDesktop {
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  width: 80%;
+  justify-content: flex-end;
+  width: 100%;
+  height: calc(100dvh - var(--header-height));
+}
+
+.profilePictureWrapperDesktop {
+  position: absolute;
+  align-self: end;
+  width: 100%;
+  bottom: 0;
+  left: -25%;
+  height: calc(100dvh - var(--header-height));
+  overflow: visible;
 }
 
 .profilePictureDesktop {
-  border-radius: 100%;
-  rotate: -2deg;
-  animation: fadeIn linear 2s;
-}
-
-.profilePictureWrapper {
-  position: relative;
-  width: 400px;
-}
-
-.profilePictureWrapper:after {
-  content: "";
-  display: block;
-  padding-bottom: 100%;
+  object-fit: contain;
 }
 
 .textGroupDesktop {
@@ -89,8 +91,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-width: 50%;
-  max-width: 50%;
+  width: 50%;
   padding: var(--spacing-xl);
 }
 
@@ -104,12 +105,19 @@
 }
 
 @media (max-width: 772px) {
-  .profileWrapperDesktop {
+  .profileWrapperDesktop,
+  .profilePictureWrapperDesktop {
     display: none;
+  }
+
+  .text {
+    text-shadow: -1px 1px 0 #000, 1px 1px 0 #000, 1px -1px 0 #000,
+      -1px -1px 0 #000;
   }
 }
 
 @media (min-width: 772px) {
+  .profilePictureWrapperMobile,
   .profileWrapperMobile {
     display: none;
   }

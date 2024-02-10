@@ -20,14 +20,15 @@ export const Navigation = () => {
       <li key={text}>
         <Link
           href={href}
-          className={
-            pathName === href ? styles.navItemActive : styles.navItemInactive
-          }
+          className={`
+            ${
+              pathName === href ? styles.navItemActive : styles.navItemInactive
+            }`}
           onClick={() => {
             setIsNavOpen(false);
           }}
         >
-          {text}
+          <p className={styles.navItem}>{text}</p>
         </Link>
       </li>
     );
@@ -36,6 +37,7 @@ export const Navigation = () => {
   const navLinks = [
     { href: "/", text: currentLangDict.navigation.home },
     { href: "/projects", text: currentLangDict.navigation.projects },
+    { href: "/blog", text: currentLangDict.navigation.blog },
     { href: "/contact", text: currentLangDict.navigation.contact },
   ];
 
@@ -51,7 +53,7 @@ export const Navigation = () => {
     return (
       <div className={styles.langSelector}>
         <button
-          className={`${styles.langButton} ${
+          className={`${styles.navItem} ${styles.langButton} ${
             currentLang === LANGS.EN && styles.active
           }`}
           onClick={() => {
@@ -63,7 +65,7 @@ export const Navigation = () => {
         <p>/</p>
 
         <button
-          className={`${styles.langButton} ${
+          className={`${styles.navItem} ${styles.langButton} ${
             currentLang === LANGS.DE && styles.active
           }`}
           onClick={() => {

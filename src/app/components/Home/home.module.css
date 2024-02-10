@@ -2,9 +2,10 @@
   display: flex;
   height: calc(100dvh - var(--header-height));
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   scroll-snap-align: center;
+  padding-top: var(--spacing-xxl);
   padding-left: var(--spacing-xxl);
   padding-right: var(--spacing-xxl);
 }
@@ -13,6 +14,13 @@
   display: flex;
   flex-direction: column;
   gap: var(--spacing-xxl);
+}
+
+.title {
+  color: var(--colour-text);
+  /* font-size: 1.3rem; */
+  margin-bottom: var(--spacing-xxxl);
+  text-align: center;
 }
 
 .text {

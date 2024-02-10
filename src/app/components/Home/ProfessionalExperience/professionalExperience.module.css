@@ -1,0 +1,74 @@
+.section {
+  display: flex;
+  height: calc(100dvh - var(--header-height));
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  scroll-snap-align: start;
+  padding-top: var(--spacing-xxl);
+  padding-left: var(--spacing-xxl);
+  padding-right: var(--spacing-xxl);
+  overflow: scroll;
+}
+
+.timelineWrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.timeline {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.timelineTitle {
+  margin-bottom: var(--spacing-xxl);
+  color: white;
+}
+
+.timelineItem {
+  display: flex;
+  flex-direction: column;
+  border-left: 2px solid white;
+  color: var(--colour-text);
+  height: 100%;
+  padding: var(--spacing-md) var(--spacing-lg);
+  padding-left: var(--spacing-xl);
+}
+
+.timelineItem:last-child {
+  border-left: none;
+}
+
+.timelineCard {
+  display: flex;
+  color: black;
+  background-color: #cdd4db;
+  flex-direction: column;
+  height: 100%;
+  gap: var(--spacing-md);
+  box-shadow: black 4px 4px 1px 1px;
+  border-radius: 8px;
+  padding: var(--spacing-md) var(--spacing-lg);
+  margin-bottom: var(--spacing-xl);
+}
+
+.timelineCardDate {
+  position: relative;
+  font-size: 1.2rem;
+  top: -19px;
+}
+
+.timelineCardDate::before {
+  position: absolute;
+  left: -44px;
+  top: 3px;
+  content: "";
+  width: 20px;
+  height: 20px;
+  background: var(--colour-bg);
+  border: 1px solid white;
+  border-radius: 50%;
+}

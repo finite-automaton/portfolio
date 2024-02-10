@@ -37,12 +37,6 @@
   animation: fadeIn 2s 2s both, oscillate 3s 2s ease infinite;
 }
 
-.chevronPath {
-  stroke: black;
-  fill: white;
-  stroke-width: 10px;
-}
-
 .profileWrapper {
   display: flex;
   flex-direction: column;
@@ -116,11 +110,6 @@
   .profilePicture {
     object-fit: contain;
     border-radius: 0;
-  }
-
-  .chevronPath {
-    stroke: white;
-    stroke-width: 1px;
   }
 
   .text {

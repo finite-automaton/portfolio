@@ -25,17 +25,19 @@
   color: var(--colour-text);
   animation: fadeIn linear 2s 2s both;
   text-wrap: nowrap;
+  text-shadow: -1px 1px 0 #000, 1px 1px 0 #000, 1px -1px 0 #000,
+    -1px -1px 0 #000;
 }
 
 .chevron {
   position: absolute;
+  height: 50px;
+  width: 50px;
   bottom: 16px;
   animation: fadeIn 2s 2s both, oscillate 3s 2s ease infinite;
 }
 
-/* Mobile */
-
-.profileWrapperMobile {
+.profileWrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -44,18 +46,23 @@
   padding: var(--spacing-xxxl) 0;
 }
 
-.profilePictureWrapperMobile {
+.profilePictureWrapper {
   position: absolute;
-  bottom: 0;
-  height: 90%;
-  width: 100%;
+  width: 70%;
 }
 
-.profilePictureMobile {
+.profilePictureWrapper:after {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+}
+
+.profilePicture {
   object-fit: cover;
+  border-radius: 40%;
 }
 
-.textGroupMobile {
+.textGroup {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -64,62 +71,49 @@
 
 /* Desktop */
 
-.profileWrapperDesktop {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  width: 100%;
-  height: calc(100dvh - var(--header-height));
-}
+@media (min-width: 772px) {
+  .title {
+    font-size: 2rem;
+    align-self: top;
+    animation: fadeIn linear 2s;
+    color: var(--colour-text);
+    text-align: center;
+    margin-bottom: var(--spacing-xxxl);
+  }
 
-.profilePictureWrapperDesktop {
-  position: absolute;
-  align-self: end;
-  width: 100%;
-  bottom: 0;
-  left: -25%;
-  height: calc(100dvh - var(--header-height));
-  overflow: visible;
-}
+  .textGroup {
+    width: 50%;
+    padding: var(--spacing-xl);
+  }
 
-.profilePictureDesktop {
-  object-fit: contain;
-}
+  .contentContainer {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+  }
 
-.textGroupDesktop {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 50%;
-  padding: var(--spacing-xl);
-}
+  .profileWrapper {
+    flex-direction: column;
+    width: 50%;
+  }
 
-.titleDesktop {
-  font-size: 2rem;
-  align-self: top;
-  animation: fadeIn linear 2s;
-  color: var(--colour-text);
-  text-align: center;
-  margin-bottom: var(--spacing-xxxl);
-}
+  .profilePictureWrapper {
+    position: absolute;
+    bottom: 0;
+    align-self: end;
+    left: -25%;
+    height: calc(100dvh - var(--header-height));
+    width: 100%;
+    overflow-y: hidden;
+  }
 
-@media (max-width: 772px) {
-  .profileWrapperDesktop,
-  .profilePictureWrapperDesktop {
-    display: none;
+  .profilePicture {
+    object-fit: contain;
+    border-radius: 0;
   }
 
   .text {
-    text-shadow: -1px 1px 0 #000, 1px 1px 0 #000, 1px -1px 0 #000,
-      -1px -1px 0 #000;
-  }
-}
-
-@media (min-width: 772px) {
-  .profilePictureWrapperMobile,
-  .profileWrapperMobile {
-    display: none;
+    text-shadow: none;
   }
 }
 

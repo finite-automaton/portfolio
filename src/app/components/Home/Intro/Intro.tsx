@@ -8,65 +8,42 @@ import { TranslationContext } from "../../Provider/Provider";
 
 import styles from "./intro.module.css";
 
+const DownChevron = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 512 512"
+    className={styles.chevron}
+  >
+    <path
+      d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"
+      stroke="white"
+      fill="white"
+    />
+  </svg>
+);
+
 export const Intro = () => {
   const { currentLangDict: langDict } = useContext(TranslationContext);
 
   return (
     <section className={styles.section}>
-      {
-        // mobile
-      }
-      <div className={styles.profilePictureWrapperMobile}>
+      <div className={styles.profilePictureWrapper}>
         <Image
-          className={styles.profilePictureMobile}
+          className={styles.profilePicture}
           src={profilePic}
           alt={"Picture of John Fletcher"}
           fill
           priority
         />
       </div>
-      <div className={styles.profileWrapperMobile}>
-        <h1 className={styles.title}>{langDict.introduction.greeting}</h1>
-        <div className={styles.textGroupMobile}>
-          <p className={styles.text}>{langDict.introduction.jobTitle1}</p>
-          <p className={styles.text}>{langDict.introduction.jobTitle2}</p>
-        </div>
-        <Image
-          className={styles.chevron}
-          src="/chevron-down-solid.svg"
-          alt="down-facing-chevron"
-          height={50}
-          width={50}
-          priority
-        />
-      </div>
-      {
-        // desktop
-      }
-      <div className={styles.profilePictureWrapperDesktop}>
-        <Image
-          className={styles.profilePictureDesktop}
-          src={profilePic}
-          alt={"Picture of John Fletcher"}
-          fill
-          priority
-        />
-      </div>
-      <div className={styles.profileWrapperDesktop}>
-        <div className={styles.textGroupDesktop}>
-          <h1 className={styles.titleDesktop}>
-            {langDict.introduction.greeting}
-          </h1>
-          <p className={styles.text}>{langDict.introduction.jobTitle1}</p>
-          <p className={styles.text}>{langDict.introduction.jobTitle2}</p>
-          <Image
-            className={styles.chevron}
-            src="/chevron-down-solid.svg"
-            alt="down-facing-chevron"
-            height={50}
-            width={50}
-            priority
-          />
+      <div className={styles.contentContainer}>
+        <div className={styles.profileWrapper}>
+          <h1 className={styles.title}>{langDict.introduction.greeting}</h1>
+          <div className={styles.textGroup}>
+            <p className={styles.text}>{langDict.introduction.jobTitle1}</p>
+            <p className={styles.text}>{langDict.introduction.jobTitle2}</p>
+          </div>
+          <DownChevron />
         </div>
       </div>
     </section>

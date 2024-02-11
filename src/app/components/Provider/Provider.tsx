@@ -17,13 +17,9 @@ export const Provider = ({ children }: { children: JSX.Element }) => {
   const [localLangLoaded, setLocalLangLoaded] = useState(false);
 
   useEffect(() => {
-    try {
-      const localLang = localStorage.getItem("lang") as LANGS;
-      setCurrentLang(localLang);
-      setLocalLangLoaded(true);
-    } catch {
-      setLocalLangLoaded(true);
-    }
+    const localLang = localStorage.getItem("lang") as LANGS;
+    localLang && setCurrentLang(localLang);
+    setLocalLangLoaded(true);
   }, []);
 
   useEffect(() => {

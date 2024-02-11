@@ -34,7 +34,7 @@
   height: 50px;
   width: 50px;
   bottom: 16px;
-  /* animation: fadeIn 2s 2s both, oscillate 3s 2s ease infinite; */
+  animation: fadeIn 2s 2s both, oscillate 3s 2s ease infinite;
 }
 
 .profileWrapper {
@@ -117,7 +117,7 @@
   }
 }
 
-/* @keyframes oscillate {
+@keyframes oscillate {
   0,
   100% {
     transform: translateY(0px);
@@ -125,7 +125,7 @@
   50% {
     transform: translateY(16px);
   }
-} */
+}
 
 @keyframes fadeIn {
   from {

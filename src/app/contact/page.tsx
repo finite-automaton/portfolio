@@ -28,7 +28,6 @@ export default function Contact() {
             alt={"linkedIn logo"}
             height={40}
             width={40}
-            priority
           />
         </Link>
 
@@ -42,7 +41,6 @@ export default function Contact() {
             alt={"github logo"}
             height={40}
             width={40}
-            priority
           />
         </Link>
       </div>

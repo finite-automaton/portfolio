@@ -20,7 +20,6 @@ export const Intro = () => {
           src={profilePic}
           alt={"Picture of John Fletcher"}
           fill
-          priority
         />
       </div>
       <div className={styles.contentContainer}>

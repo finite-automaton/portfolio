@@ -18,13 +18,12 @@ export const Provider = ({ children }: { children: JSX.Element }) => {
 
   useEffect(() => {
     const localLang = localStorage.getItem("lang") as LANGS;
-    setCurrentLang(localLang);
+    localLang && setCurrentLang(localLang);
     setLocalLangLoaded(true);
   }, []);
 
   useEffect(() => {
-  
-    if (localLangLoaded) { 
+    if (localLangLoaded) {
       const updateLangDict = async () => {
         const langDict: Dictionary = await getLanguageDictionary(currentLang);
         setCurrentLangDict(langDict);

@@ -13,7 +13,7 @@ import bathLogo from "../../../../../public/bath_logo.jpeg";
 
 import { TranslationContext } from "../../Provider/Provider";
 
-import styles, { techLogoWrapper } from "./professionalBio.module.css";
+import styles from "./professionalBio.module.css";
 import homeStyles from "../home.module.css";
 import Chevron from "../../Icons/Chevron";
 
@@ -57,7 +57,7 @@ const Background = ({ className }: { className: string }) => {
       </div>
       <div className={styles.techLogos}>
         {logos.map((logoSrc) => (
-          <div className={techLogoWrapper} key={logoSrc}>
+          <div className={styles.techLogoWrapper} key={logoSrc}>
             <Image className={styles.techLogo} src={logoSrc} fill alt="" />
           </div>
         ))}

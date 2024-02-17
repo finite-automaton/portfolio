@@ -1,9 +1,8 @@
 .imageWrapper {
   position: relative;
-  height: 30%;
   width: 100%;
+  height: 40%;
   padding: var(--spacing-xxl);
-  margin-top: var(--spacing-xl)
 }
 
 .mainImage {
@@ -12,4 +11,42 @@
   height: 100%;
   width: 100%;
   border-radius: 20px;
+}
+
+.contentWrapper {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+}
+
+.personalBioWrapper {
+  height: 100%;
+}
+
+@media (min-width: 768px) {
+  .mobileImage {
+    display: none;
+    visibility: hidden;
+  }
+  .contentWrapper {
+    flex-direction: row-reverse;
+  }
+  .imageWrapper {
+    height: 100%;
+    width: 50%;
+    margin-top: 0;
+  }
+  .mainImage {
+    object-fit: cover;
+  }
+  .personalBioWrapper {
+    width: 50%;
+    padding: var(--spacing-xxl);
+  }
+}
+
+@media (max-width: 768px) {
+  .desktopImage {
+    display: none;
+  }
 }

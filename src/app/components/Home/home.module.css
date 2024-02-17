@@ -1,5 +1,6 @@
 .section {
   display: flex;
+  position: relative;
   height: calc(100dvh - var(--header-height));
   flex-direction: column;
   justify-content: flex-start;
@@ -13,13 +14,12 @@
 .textGroup {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-xxl);
+  gap: var(--spacing-lg);
 }
 
 .title {
   color: var(--colour-text);
-  /* font-size: 1.3rem; */
-  margin-bottom: var(--spacing-xxxl);
+  margin-bottom: var(--spacing-xl);
   text-align: center;
 }
 

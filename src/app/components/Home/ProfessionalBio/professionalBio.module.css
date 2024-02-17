@@ -1,0 +1,26 @@
+.techLogos {
+  display: flex;
+  gap: var(--spacing-md);
+  width: 100%;
+  margin-top: 15%;
+
+}
+
+.techLogoWrapper {
+  position: relative;
+  width: 25%;
+  max-height: 80px;
+}
+
+.techLogoWrapper::after {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+}
+
+.logo {
+  padding: 4px;
+  object-fit: contain;
+  margin-right: -2px;
+  margin-left: -2px;
+}

@@ -6,9 +6,7 @@
   justify-content: flex-start;
   align-items: center;
   scroll-snap-align: center;
-  padding-top: var(--spacing-xxl);
-  padding-left: var(--spacing-xxl);
-  padding-right: var(--spacing-xxl);
+  padding: var(--spacing-xxl);
 }
 
 .textGroup {

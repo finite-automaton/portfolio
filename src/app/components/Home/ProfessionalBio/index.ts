@@ -1,1 +1,1 @@
-export { ProfessionalBio as Bio } from "./ProfessionalBio";
+export { ProfessionalBio } from "./ProfessionalBio";

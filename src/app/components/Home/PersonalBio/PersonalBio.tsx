@@ -17,22 +17,22 @@ export const PersonalBio = () => {
         <div className={styles.personalBioWrapper}>
           <h1 className={homeStyles.title}>Interests</h1>
           <div className={homeStyles.textGroup}>
-            <p className={homeStyles.text}>{langDict.bio.personal1}</p>
+            <p className={homeStyles.text}>{langDict.personalBio.personal1}</p>
             <p/>
             <p className={`${homeStyles.text} ${styles.desktopHidden}`}>
-              {langDict.bio.personal2}
+              {langDict.personalBio.personal2}
             </p>
             <p className={`${homeStyles.text} ${styles.mobileHidden}`}>
-              {langDict.bio.personal3}
+              {langDict.personalBio.personal3}
             </p>
             <p className={`${homeStyles.text} ${styles.mobileHidden}`}>
-              {langDict.bio.personal4}
+              {langDict.personalBio.personal4}
             </p>
             <p className={`${homeStyles.text} ${styles.mobileHidden}`}>
-              {langDict.bio.personal5}
+              {langDict.personalBio.personal5}
             </p>
             <p className={`${homeStyles.text} ${styles.mobileHidden}`}>
-              {langDict.bio.personal6}
+              {langDict.personalBio.personal6}
             </p>
           </div>
         </div>

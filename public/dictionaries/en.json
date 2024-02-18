@@ -10,22 +10,26 @@
     "jobTitle1": "Software Engineer",
     "jobTitle2": "& Engineering Manager"
   },
-  "bio": {
-    "work": "I'm a full-stack engineer with experience managing large scale projects and teams in e-commerce, insurance and finance. I work primarily in TypeScript with React but have also worked with Scala and Python.",
-    "personal1": "Outside of work, I enjoy hiking, running and learning languages.",
-    "personal2": "I speak: native English 🇬🇧, advanced German 🇩🇪🇨🇭 and intermediate French 🇫🇷.",
-    "personal3": "I speak:",
-    "personal4": "Native English 🇬🇧",
-    "personal5": "Advanced German 🇩🇪🇨🇭",
-    "personal6": "Intermediate French 🇫🇷"
+  "professionalBio": {
+    "title": "My Professional Background",
+    "work": "I'm a full-stack engineer with experience managing large scale projects and teams in e-commerce, insurance and finance. I work primarily in TypeScript with React but have also worked with Scala and Python."
   },
   "professionalExperience": {
+    "title": "Experience",
     "2024": "I successfully completed my part-time MSc in Computer Science at the University of Bath. I undertook a dissertation on implementing a Hypergraph Neural Network for early diagnosis of dementia.",
     "2022": "After Depop was acquired by Etsy for $1.6b, I made the decision to focus on my technical skill and knowledge by moving into a full time Software Engineering role.",
     "2018": "Headhunted for the role, I joined my second start up Depop as Software Development Manager, leading on agile and technical processes and managing senior engineers.",
     "2017": "Entering the world of start ups, I led an agile transformation for Tide, a successful fintech SME banking provider.",
     "2016": "I moved to DLG as the Scrum Master for their car insurance offerings, working with a distributed team across Poland, India and the UK.",
     "2015": "Starting my IT career in AXA PPP, a private healthcare insurer, I worked as a Business Analyst and Scrum Master on a large project to migrate the key workflow system."
+  },
+  "personalBio": {
+    "personal1": "Outside of work, I enjoy hiking, running and learning languages.",
+    "personal2": "I speak: native English 🇬🇧, advanced German 🇩🇪🇨🇭 and intermediate French 🇫🇷.",
+    "personal3": "I speak:",
+    "personal4": "Native English 🇬🇧",
+    "personal5": "Advanced German 🇩🇪🇨🇭",
+    "personal6": "Intermediate French 🇫🇷"
   },
   "contact": {
     "linkedin": "Connect with me on linkedIn.",

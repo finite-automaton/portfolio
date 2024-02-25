@@ -1,0 +1,30 @@
+.reviewCard {
+  height: calc(80dvh - var(--header-height));
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: var(--spacing-lg);
+  overflow: scroll;
+  background-color: whitesmoke;
+  gap: var(--spacing-lg);
+  margin-bottom: var(--spacing-lg);
+}
+
+.productTitle {
+  font-size: 1rem;
+}
+
+.reviewsInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.thisReview {
+  height: 60%;
+  overflow: scroll;
+}
+
+.starRatings {
+  display: flex;
+}

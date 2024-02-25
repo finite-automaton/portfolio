@@ -1,0 +1,34 @@
+.title{
+  margin: 0 auto;
+  transform: rotate(-3deg);
+  margin-bottom: var(--spacing-xxl);
+}
+
+.echte{
+  color: green;
+}
+
+.fake {
+  color: rgb(195, 20, 20);
+}
+
+.text {
+  margin-bottom: var(--spacing-lg);
+}
+
+.linkText{
+  text-decoration: underline;
+  margin-bottom: var(--spacing-xl);
+}
+
+.linkText:hover {
+  cursor: pointer;
+}
+
+.startButton {
+  width: 100%;
+  height: 50px;
+  font-family: inherit;
+  font-size: 1.2rem;
+  
+}

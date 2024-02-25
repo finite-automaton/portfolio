@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Kanit } from "next/font/google";
-import "./global.css";
+import "../global.css";
 import styles from "./layout.module.css";
-import { Provider } from "./components/Provider";
-import { Navigation } from "./components/Navigation/Navigation";
+import Chevron from "../(site)/components/Icons/Chevron";
 
 const kanit = Kanit({ subsets: ["latin"], weight: "400" });
 
@@ -20,12 +20,16 @@ export default function Layout({
   return (
     <html lang="en" className={kanit.className}>
       <body className={styles.body}>
-        <Provider>
-          <>
-            <Navigation />
-            <main className={styles.main}>{children}</main>
-          </>
-        </Provider>
+        <nav className={styles.nav}>
+          <Link href="/projects" className={styles.link}>
+            <Chevron
+              className={styles.backChevron}
+              stroke="black"
+              fill="black"
+            />
+          </Link>
+        </nav>
+        <main className={styles.main}>{children}</main>
       </body>
     </html>
   );

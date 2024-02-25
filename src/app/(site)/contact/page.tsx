@@ -1,15 +1,16 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 
-import linkedInLogo from "../../../public/linkedin.png";
-import githubLogo from "../../../public/github-mark-white.png";
+import linkedInLogo from "../../../../public/linkedin.png";
+import githubLogo from "../../../../public/github-mark-white.png";
+import { TranslationContext } from "../components/Provider/Provider";
+
 import { create } from "@/app/actions";
 
 import styles from "./page.module.css";
 import { useContext, useState } from "react";
-import Link from "next/link";
-import { TranslationContext } from "../components/Provider/Provider";
 
 export default function Contact() {
   const { currentLangDict: langDict } = useContext(TranslationContext);

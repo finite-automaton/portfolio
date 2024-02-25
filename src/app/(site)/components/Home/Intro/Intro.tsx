@@ -3,7 +3,7 @@
 import { useContext } from "react";
 import Image from "next/image";
 
-import profilePic from "../../../../../public/profile-cropped.webp";
+import profilePic from "../../../../../../public/profile-cropped.webp";
 import { TranslationContext } from "../../Provider/Provider";
 
 import styles from "./intro.module.css";

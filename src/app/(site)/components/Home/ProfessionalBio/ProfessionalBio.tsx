@@ -1,10 +1,10 @@
 import { useContext } from "react";
 import Image from "next/image";
 
-import typescriptLogo from "../../../../../public/Typescript_logo_2020.svg";
-import reactLogo from "../../../../../public/React-icon.svg";
-import scalaLogo from "../../../../../public/scala-spiral.png";
-import pythonLogo from "../../../../../public/Python-logo-notext.svg";
+import typescriptLogo from "../../../../../../public/Typescript_logo_2020.svg";
+import reactLogo from "../../../../../../public/React-icon.svg";
+import scalaLogo from "../../../../../../public/scala-spiral.png";
+import pythonLogo from "../../../../../../public/Python-logo-notext.svg";
 import { TranslationContext } from "../../Provider/Provider";
 import homeStyles from "../home.module.css";
 import { Timeline } from "./Timeline";

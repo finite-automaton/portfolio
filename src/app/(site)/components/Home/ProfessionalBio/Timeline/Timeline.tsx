@@ -1,13 +1,13 @@
 import { useContext } from "react";
 import Image from "next/image";
 
-import axaLogo from "../../../../../../public/AXA_Logo.svg";
-import dlgLogo from "../../../../../../public/DLG_logo_cropped.jpg";
-import tideLogo from "../../../../../../public/Tide_Logo_Blue_RGB.svg";
-import depopLogo from "../../../../../../public/depop.webp";
-import bathLogo from "../../../../../../public/bath_logo.jpeg";
+import axaLogo from "../../../../../../../public/AXA_Logo.svg";
+import dlgLogo from "../../../../../../../public/DLG_logo_cropped.jpg";
+import tideLogo from "../../../../../../../public/Tide_Logo_Blue_RGB.svg";
+import depopLogo from "../../../../../../../public/depop.webp";
+import bathLogo from "../../../../../../../public/bath_logo.jpeg";
 import Chevron from "../../../Icons/Chevron";
-import { TranslationContext } from "@/app/components/Provider/Provider";
+import { TranslationContext } from "@/app/(site)/components/Provider/Provider";
 
 import styles from "./timeline.module.css";
 

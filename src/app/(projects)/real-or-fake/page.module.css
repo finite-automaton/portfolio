@@ -1,0 +1,41 @@
+.gameWrapper {
+  position: relative;
+}
+
+.options {
+  display: flex;
+  justify-content: space-between;
+}
+
+.optionButton {
+  width: 120px;
+  height: 40px;
+}
+
+.continueButton {
+  margin: 0 auto;
+}
+
+.overlay {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: white;
+  opacity: 50%;
+}
+
+.guessResult {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  top: 20%;
+  display: flex;
+  flex-direction: column;
+  z-index: 2;
+  background-color: white;
+  width: 80%;
+  height: 50%;
+}

@@ -1,0 +1,12 @@
+.main {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 0 var(--spacing-xl);
+}
+
+@media (min-width: 772px) {
+  .main {
+    padding: 0 20%;
+  }
+}

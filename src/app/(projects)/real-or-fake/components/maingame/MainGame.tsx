@@ -139,7 +139,7 @@ export const MainGame = ({ gameState, setGameState }: MainGameProps) => {
           <Review reviewData={gameState.cards[gameState.currentCardIndex]} />
           <div className={styles.options}>
             <button
-              className={styles.optionButton}
+              className={`${styles.optionButton} ${styles.green}`}
               onClick={() =>
                 handleChoiceClick(
                   false,
@@ -154,7 +154,7 @@ export const MainGame = ({ gameState, setGameState }: MainGameProps) => {
               Echte
             </button>
             <button
-              className={styles.optionButton}
+              className={`${styles.optionButton} ${styles.red}`}
               onClick={() =>
                 handleChoiceClick(
                   true,

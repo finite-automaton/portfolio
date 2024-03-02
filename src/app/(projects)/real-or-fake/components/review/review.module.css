@@ -1,5 +1,4 @@
 .reviewCard {
-  height: calc(77dvh - var(--header-height));
   color: black;
   display: flex;
   flex-direction: column;
@@ -14,11 +13,8 @@
 .productTitle {
   font-size: 1.2rem;
   text-align: center;
-  font-style: italic;
   margin-bottom: var(--spacing-md);
   text-decoration: underline;
-  max-height: 25%;
-  overflow: scroll;
 }
 
 .reviewsInfo {
@@ -29,7 +25,6 @@
 }
 
 .thisReview {
-  height: 60%;
   overflow: scroll;
   border: solid 1px black;
   padding: 8px;
@@ -57,7 +52,7 @@
 
 @media (min-width: 772px) {
   .productTitle {
-    font-size: 1.8rem;
+    font-size: 1.4rem;
   }
 
   .headline {

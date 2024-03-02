@@ -7,6 +7,7 @@
   width: 120px;
   height: 40px;
   font: inherit;
+  border: none;
 }
 
 .optionButton:hover {
@@ -107,11 +108,19 @@
   height: 90%;
 }
 
+.green {
+  background-color: rgb(158, 213, 134);
+}
+
+.red {
+  background-color: rgb(246, 87, 87);
+}
+
 @media (min-width: 772px) {
   .optionButton {
-    height: 60px;
+    height: 40px;
     width: 40%;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
   }
 
   .score {
@@ -119,7 +128,7 @@
   }
 
   .guessResult {
-    font-size: 2rem;
+    font-size: 1.5rem;
     width: 40%;
     animation: appear 0.8s;
   }
@@ -135,7 +144,7 @@
   }
 }
 
-@keyframes appear{
+@keyframes appear {
   0% {
     opacity: 0;
   }

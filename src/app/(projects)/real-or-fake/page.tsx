@@ -4,40 +4,8 @@ import { useState } from "react";
 
 import styles from "./page.module.css";
 import Intro from "./components/intro/Intro";
-import Review from "./components/review/Review";
 import { MainGame } from "./components/maingame/MainGame";
-
-export enum Phase {
-  INTRO = "intro",
-  NEW = "new",
-  GUESSING = "guessing",
-  GUESSED = "guessed",
-  ROUND_OVER = "round_over",
-  END = "end",
-}
-
-export type GameState = {
-  phase: Phase;
-  cards: Review[] | undefined;
-  currentCardIndex: number;
-  isCorrect: boolean | undefined;
-  usedIds: string[];
-  correctCount: number;
-  totalCount: number;
-};
-
-export type Review = {
-  id: string;
-  isSpam: boolean;
-  product: string;
-  ratings: number;
-  fiveStarCount: number;
-  oneStarCount: number;
-  thisRating: number;
-  headline: string;
-  reviewText: string;
-  spamReason: string;
-};
+import { GameState, Phase } from "./types";
 
 export default function RealOrFake() {
   const [gameState, setGameState] = useState<GameState>({

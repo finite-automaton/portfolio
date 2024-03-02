@@ -2,7 +2,7 @@ import { Dispatch, SetStateAction, useEffect } from "react";
 
 import realReviews from "../../static/real.json";
 import fakeReviews from "../../static/fake.json";
-import { GameState, Phase, Review as ReviewT } from "../../page";
+import { GameState, Phase, Review as ReviewT } from "../../types";
 import Review from "../review/Review";
 
 import styles from "./maingame.module.css";

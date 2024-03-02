@@ -1,5 +1,5 @@
 import styles from "./review.module.css";
-import { Review } from "../../page";
+import { Review } from "../../types";
 
 type Props = {
   reviewData: Review;

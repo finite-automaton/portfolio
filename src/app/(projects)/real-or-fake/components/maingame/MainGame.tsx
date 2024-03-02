@@ -237,7 +237,7 @@ export const MainGame = ({ gameState, setGameState }: MainGameProps) => {
             </>
           )}
           <p className={styles.score}>
-            Spielstand: {gameState.correctCount} / {gameState.totalCount}
+            {`Spielstand: ${gameState.correctCount} / ${gameState.totalCount}`}
           </p>
         </>
       )}

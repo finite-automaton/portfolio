@@ -24,10 +24,10 @@ export default function Review({ reviewData }: Props) {
       </div>
       <p>Diese Rezension</p>
       <div className={styles.thisReview}>
-        <p className={styles.headline}>«{reviewData.headline}»</p>
+        <p className={styles.headline}>{`«${reviewData.headline}»`}</p>
         <p className={`${styles.stars} ${styles.userRating}`}>
-          {"★".repeat(reviewData.thisRating)}
-          {"☆".repeat(5 - reviewData.thisRating)}
+          <span>{"★".repeat(reviewData.thisRating)}</span>
+          <span>{"☆".repeat(5 - reviewData.thisRating)}</span>
         </p>
         <p className={styles.reviewText}>{reviewData.reviewText}</p>
       </div>

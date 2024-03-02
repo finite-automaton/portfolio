@@ -9,8 +9,9 @@ export default function Intro({ handleStartButtonClick }: Props) {
   return (
     <>
       <h1 className={styles.title}>
-        <span className={styles.echte}>Echt</span> oder
-        <span className={styles.fake}> Fake</span>
+        <span className={styles.echte}>Echt</span>
+        <span className={styles.oder}>oder</span>
+        <span className={styles.fake}>Fake</span>
       </h1>
       <p className={styles.text}>
         Können Sie erkennen, ob eine Bewertung echt oder gefälscht ist?
@@ -25,10 +26,10 @@ export default function Intro({ handleStartButtonClick }: Props) {
         rel="noopener noreferrer"
         className={styles.linkText}
       >
-        <p>HDA Sprachtechnologie</p>
+        <p className={styles.text}>HDA Sprachtechnologie</p>
       </Link>
       <button className={styles.startButton} onClick={handleStartButtonClick}>
-        Los geht's!
+        Los geht&apos;s!
       </button>
     </>
   );

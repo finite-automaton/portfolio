@@ -1,5 +1,7 @@
 .body {
   position: relative;
+  background-color: var(--colour-bg);
+  color: white;
 }
 
 .link {
@@ -10,8 +12,6 @@
 }
 
 .backChevron {
-  stroke: black;
-  fill: black;
   transform: rotate(90deg);
   height: 40px;
   width: 40px;
@@ -25,10 +25,4 @@
   justify-content: space-between;
   align-items: bottom;
   z-index: 10;
-}
-
-.main {
-  display: flex;
-  padding: var(--spacing-xl);
-  flex-direction: column;
 }

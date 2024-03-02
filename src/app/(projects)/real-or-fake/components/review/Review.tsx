@@ -8,20 +8,29 @@ type Props = {
 export default function Review({ reviewData }: Props) {
   return (
     <div className={styles.reviewCard}>
-      <p className={styles.productTitle}>{reviewData.product}</p>
+      <h1 className={styles.productTitle}>{reviewData.product}</h1>
       <div className={styles.reviewsInfo}>
-        <p>Totale Rezensionen: {reviewData.ratings}</p>
-        <p>⭐️⭐️⭐️⭐️⭐️ {reviewData.fiveStarCount}</p>
-        <p>⭐️✩✩✩✩{reviewData.oneStarCount}</p>
+        <p className={styles.wideText}>
+          Totale Rezensionen <span>{reviewData.ratings}</span>
+        </p>
+        <p className={styles.wideText}>
+          <span className={styles.stars}>★★★★★</span>
+          <span>{reviewData.fiveStarCount}</span>
+        </p>
+        <p className={styles.wideText}>
+          <span className={styles.stars}> ★☆☆☆☆ </span>
+          <span>{reviewData.oneStarCount}</span>
+        </p>
       </div>
+      <p>Diese Rezension</p>
       <div className={styles.thisReview}>
-        <p>{reviewData.headline}</p>
-        <p>{reviewData.reviewText}</p>
+        <p className={styles.headline}>«{reviewData.headline}»</p>
+        <p className={`${styles.stars} ${styles.userRating}`}>
+          {"★".repeat(reviewData.thisRating)}
+          {"☆".repeat(5 - reviewData.thisRating)}
+        </p>
+        <p className={styles.reviewText}>{reviewData.reviewText}</p>
       </div>
-      <p>
-        {"⭐️".repeat(reviewData.thisRating)}
-        {"✩".repeat(5 - reviewData.thisRating)}
-      </p>
     </div>
   );
 }

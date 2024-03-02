@@ -24,12 +24,10 @@ export default function Layout({
           <Link href="/projects" className={styles.link}>
             <Chevron
               className={styles.backChevron}
-              stroke="black"
-              fill="black"
             />
           </Link>
         </nav>
-        <main className={styles.main}>{children}</main>
+        {children}
       </body>
     </html>
   );

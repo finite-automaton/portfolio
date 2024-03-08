@@ -6,8 +6,14 @@
 .echte {
   display: inline-block;
   margin-right: 1rem;
-  color: green;
+  background: linear-gradient(
+    122deg,
+    rgba(34, 195, 195, 1) 0%,
+    rgba(89, 253, 45, 1) 100%
+  );
   animation: spin 1s;
+  background-clip: text;
+  color: transparent;
 }
 
 .oder {
@@ -20,7 +26,14 @@
 .fake {
   display: inline-block;
   margin-left: 1rem;
-  color: rgb(195, 20, 20);
+  background: rgb(239, 0, 0);
+  background: linear-gradient(
+    21deg,
+    rgba(239, 0, 0, 1) 0%,
+    rgba(253, 127, 45, 1) 100%
+  );
+  background-clip: text;
+  color: transparent;
   animation: spin 1s 2s;
 }
 
@@ -45,6 +58,13 @@
   margin-top: var(--spacing-xxl);
   border: none;
   border-radius: 10px;
+  background: rgb(44, 240, 250);
+  background: radial-gradient(
+    circle,
+    rgba(44, 240, 250, 1) 0%,
+    rgba(148, 203, 233, 1) 100%
+  );
+  text-shadow: 1px 1px 10px white;
 }
 
 .startButton:hover {

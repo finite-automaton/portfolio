@@ -24,5 +24,4 @@ export async function create(formData: FormData) {
       )}\n${formData.get("message")}`,
     }),
   });
-  console.log("Email sent!");
 }

@@ -50,10 +50,7 @@ const getReviews = (gameState: GameState) => {
 };
 
 export const MainGame = ({ gameState, setGameState }: MainGameProps) => {
-  console.log(gameState);
-
   useEffect(() => {
-    console.log(gameState);
     if (gameState.phase === Phase.NEW) {
       const gameCards = getReviews(gameState);
       if (gameCards.length === 0) {
@@ -106,8 +103,7 @@ export const MainGame = ({ gameState, setGameState }: MainGameProps) => {
           ? gameState.correctCount + 1
           : gameState.correctCount,
         totalCount: gameState.totalCount + 1,
-        phase:
-          gameState.currentCardIndex === 9 ? Phase.ROUND_OVER : Phase.GUESSED,
+        phase: Phase.GUESSED,
       };
     });
   };
@@ -132,144 +128,174 @@ export const MainGame = ({ gameState, setGameState }: MainGameProps) => {
     });
   };
 
+  const currentCard = gameState.cards[gameState.currentCardIndex];
+
+  type ChoiceButtonProps = {
+    color: "red" | "green";
+    isFake: boolean;
+    text: string;
+  };
+
+  function ChoiceButton({ color, isFake, text }: ChoiceButtonProps) {
+    return (
+      <button
+        className={`${styles.optionButton} ${
+          color === "red" ? styles.red : styles.green
+        }`}
+        onClick={() =>
+          handleChoiceClick(
+            isFake,
+            gameState.cards && gameState.cards[gameState.currentCardIndex]
+          )
+        }
+        disabled={
+          gameState.phase !== Phase.GUESSING && gameState.phase !== Phase.NEW
+        }
+      >
+        {text}
+      </button>
+    );
+  }
+
+  function PlayAgainButton() {
+    return (
+      <button
+        className={`${styles.continueButton} ${styles.optionButton}`}
+        onClick={handlePlayAgain}
+      >
+        Wieder Spielen
+      </button>
+    );
+  }
+
+  function TickIcon() {
+    return (
+      <svg
+        className={styles.pulse}
+        xmlns="http://www.w3.org/2000/svg"
+        x="0px"
+        y="0px"
+        width="100"
+        height="100"
+        viewBox="0 0 48 48"
+      >
+        <polyline
+          fill="none"
+          stroke="#42a047"
+          stroke-miterlimit="10"
+          stroke-width="4"
+          points="6,27.5 17,38.5 42,13.5"
+        ></polyline>
+      </svg>
+    );
+  }
+
+  function CrossIcon() {
+    return (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        x="0px"
+        y="0px"
+        width="100"
+        height="100"
+        viewBox="0 0 48 48"
+        className={styles.pulse}
+      >
+        <path
+          fill="#F44336"
+          d="M21.5 4.5H26.501V43.5H21.5z"
+          transform="rotate(45.001 24 24)"
+        ></path>
+        <path
+          fill="#F44336"
+          d="M21.5 4.5H26.5V43.501H21.5z"
+          transform="rotate(135.008 24 24)"
+        ></path>
+      </svg>
+    );
+  }
+
+  function GuessResult() {
+    function ContinueButton() {
+      return (
+        <button
+          className={`${styles.continueButton} ${styles.optionButton}`}
+          onClick={handleContinueClick}
+        >
+          Weiter
+        </button>
+      );
+    }
+
+    return (
+      <div className={styles.guessResult}>
+        <p>{gameState.isCorrect ? "Richtig!" : "Falsch"}</p>
+        {gameState.isCorrect ? <TickIcon /> : <CrossIcon />}
+        <div className={styles.guessExplanation}>
+          <p>
+            {currentCard.isSpam
+              ? `Das war eine Fake Renzension`
+              : `Das war eine echte Renzension!`}
+          </p>
+          {currentCard.isSpam && <p>Gründe: {currentCard.spamReason}</p>}
+        </div>
+        <ContinueButton />
+      </div>
+    );
+  }
+
+  function RoundOverMessage() {
+    return (
+      <div className={styles.finalResult}>
+        <p>
+          {gameState.correctCount < 5
+            ? "Es ist nicht so einfach!"
+            : "Gut gemacht!"}
+        </p>
+        <p>
+          <span className={`${styles.pulse} ${styles.inlineBlock}`}>
+            {gameState.correctCount}
+          </span>{" "}
+          / {gameState.totalCount}
+        </p>
+        <PlayAgainButton />
+      </div>
+    );
+  }
+
+  function Footer() {
+    return (
+      <div className={styles.footer}>
+        <div className={styles.options}>
+          <ChoiceButton color="green" isFake={false} text="Echte" />
+          <ChoiceButton color="red" isFake={true} text="Fake" />
+        </div>
+        <p className={styles.score}>
+          {`Spielstand: ${gameState.correctCount} / ${gameState.totalCount}`}
+        </p>
+      </div>
+    );
+  }
+
+  if (gameState.cards.length === 0) {
+    return null;
+  }
+
+  console.log(gameState.phase);
+  const showOverlay =
+    gameState.phase === Phase.GUESSED || gameState.phase === Phase.ROUND_OVER;
+
   return (
     <>
-      {gameState.cards && (
-        <>
-          <Review reviewData={gameState.cards[gameState.currentCardIndex]} />
-          <div className={styles.options}>
-            <button
-              className={`${styles.optionButton} ${styles.green}`}
-              onClick={() =>
-                handleChoiceClick(
-                  false,
-                  gameState.cards && gameState.cards[gameState.currentCardIndex]
-                )
-              }
-              disabled={
-                gameState.phase !== Phase.GUESSING &&
-                gameState.phase !== Phase.NEW
-              }
-            >
-              Echte
-            </button>
-            <button
-              className={`${styles.optionButton} ${styles.red}`}
-              onClick={() =>
-                handleChoiceClick(
-                  true,
-                  gameState.cards && gameState.cards[gameState.currentCardIndex]
-                )
-              }
-              disabled={
-                gameState.phase !== Phase.GUESSING &&
-                gameState.phase !== Phase.NEW
-              }
-            >
-              Fake
-            </button>
-          </div>
-          {gameState.phase === Phase.GUESSED && (
-            <>
-              <div className={styles.guessResult}>
-                <p>{gameState.isCorrect ? "Richtig!" : "Falsch"}</p>
-                {gameState.isCorrect ? (
-                  <svg
-                    className={styles.pulse}
-                    xmlns="http://www.w3.org/2000/svg"
-                    x="0px"
-                    y="0px"
-                    width="100"
-                    height="100"
-                    viewBox="0 0 48 48"
-                  >
-                    <polyline
-                      fill="none"
-                      stroke="#42a047"
-                      stroke-miterlimit="10"
-                      stroke-width="4"
-                      points="6,27.5 17,38.5 42,13.5"
-                    ></polyline>
-                  </svg>
-                ) : (
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    x="0px"
-                    y="0px"
-                    width="100"
-                    height="100"
-                    viewBox="0 0 48 48"
-                    className={styles.pulse}
-                  >
-                    <path
-                      fill="#F44336"
-                      d="M21.5 4.5H26.501V43.5H21.5z"
-                      transform="rotate(45.001 24 24)"
-                    ></path>
-                    <path
-                      fill="#F44336"
-                      d="M21.5 4.5H26.5V43.501H21.5z"
-                      transform="rotate(135.008 24 24)"
-                    ></path>
-                  </svg>
-                )}
-                <div className={styles.guessExplanation}>
-                  <p>
-                    {gameState.cards[gameState.currentCardIndex].isSpam
-                      ? `Das war eine Fake Renzension`
-                      : `Das war eine echte Renzension!`}
-                  </p>
-                  {gameState.cards[gameState.currentCardIndex].isSpam && (
-                    <p>
-                      Gründe:{" "}
-                      {gameState.cards[gameState.currentCardIndex].spamReason}
-                    </p>
-                  )}
-                </div>
-                <button
-                  className={`${styles.continueButton} ${styles.optionButton}`}
-                  onClick={handleContinueClick}
-                >
-                  Weiter
-                </button>
-              </div>
-              <div className={styles.overlay}></div>
-            </>
-          )}
-          <p className={styles.score}>
-            {`Spielstand: ${gameState.correctCount} / ${gameState.totalCount}`}
-          </p>
-        </>
-      )}
-      {gameState.phase === Phase.ROUND_OVER && (
-        <>
-          <div className={styles.finalResult}>
-            <p>
-              {gameState.correctCount < 5
-                ? "Es ist nicht so einfach!"
-                : "Gut gemacht!"}
-            </p>
-            <p>
-              <span className={`${styles.pulse} ${styles.inlineBlock}`}>
-                {gameState.correctCount}
-              </span>{" "}
-              / {gameState.totalCount}
-            </p>
-
-            <button className={styles.playAgain} onClick={handlePlayAgain}>
-              Wieder Spielen
-            </button>
-          </div>
-          <div className={styles.overlay}></div>
-        </>
-      )}
+      {showOverlay && <div className={styles.overlay} />}
+      <Review reviewData={gameState.cards[gameState.currentCardIndex]} />
+      <Footer />
+      {gameState.phase === Phase.GUESSED && <GuessResult />}
+      {gameState.phase === Phase.ROUND_OVER && <RoundOverMessage />}
       {gameState.phase === Phase.END && (
-        <>
-          <div className={styles.guessResult}>
-            <p>Es gibt kein mehr Rezensionen!</p>
-          </div>
-          <div className={styles.overlay}></div>
-        </>
+        <div className={styles.guessResult}>
+          <p>Es gibt kein mehr Rezensionen!</p>
+        </div>
       )}
     </>
   );

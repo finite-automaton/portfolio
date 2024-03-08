@@ -10,7 +10,7 @@
   align-items: bottom;
   z-index: 10;
   background-color: var(--colour-bg);
-  box-shadow: 0 4px 30px 16px #082032;
+  box-shadow: 0 4px 30px 16px var(--colour-bg);
 }
 
 .navList {

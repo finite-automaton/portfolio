@@ -7,7 +7,9 @@
   overflow: scroll;
   background-color: rgba(233, 232, 232, 0.931);
   gap: var(--spacing-lg);
-  margin-bottom: var(--spacing-lg);
+  min-height: 60dvh;
+  border-radius: 4px;
+  margin-bottom: 130px;
 }
 
 .productTitle {
@@ -25,10 +27,10 @@
 }
 
 .thisReview {
-  overflow: scroll;
   border: solid 1px black;
   padding: 8px;
   margin: -8px;
+  flex-grow: 5;
 }
 
 .wideText {
@@ -65,5 +67,9 @@
 
   .reviewText {
     font-size: 1.2rem;
+  }
+
+  .reviewCard {
+    margin-bottom: 166px;
   }
 }

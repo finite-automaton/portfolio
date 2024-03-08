@@ -6,6 +6,7 @@ import { GameState, Phase, Review as ReviewT } from "../../types";
 import Review from "../review/Review";
 
 import styles from "./maingame.module.css";
+import Chevron from "@/app/(site)/components/Icons/Chevron";
 
 type MainGameProps = {
   gameState: GameState;
@@ -82,17 +83,6 @@ export const MainGame = ({ gameState, setGameState }: MainGameProps) => {
     }
   }, [gameState.phase]);
 
-  useEffect(() => {
-    if (gameState.totalCount === 10) {
-      setGameState((currentState) => {
-        return {
-          ...currentState,
-          phase: Phase.ROUND_OVER,
-        };
-      });
-    }
-  }, [gameState.totalCount]);
-
   const handleChoiceClick = (choice: boolean, currentCard?: ReviewT) => {
     const isCorrectChoice = currentCard && choice === currentCard.isSpam;
     setGameState((gameState) => {
@@ -109,13 +99,20 @@ export const MainGame = ({ gameState, setGameState }: MainGameProps) => {
   };
 
   const handleContinueClick = () => {
-    setGameState((gameState) => {
-      return {
-        ...gameState,
-        phase: Phase.GUESSING,
-        currentCardIndex: gameState.currentCardIndex + 1,
-      };
-    });
+    gameState.totalCount === 10
+      ? setGameState((gameState) => {
+          return {
+            ...gameState,
+            phase: Phase.ROUND_OVER,
+          };
+        })
+      : setGameState((gameState) => {
+          return {
+            ...gameState,
+            phase: Phase.GUESSING,
+            currentCardIndex: gameState.currentCardIndex + 1,
+          };
+        });
   };
 
   const handlePlayAgain = () => {
@@ -160,7 +157,7 @@ export const MainGame = ({ gameState, setGameState }: MainGameProps) => {
   function PlayAgainButton() {
     return (
       <button
-        className={`${styles.continueButton} ${styles.optionButton}`}
+        className={`${styles.playAgainButton} ${styles.optionButton}`}
         onClick={handlePlayAgain}
       >
         Wieder Spielen
@@ -223,6 +220,11 @@ export const MainGame = ({ gameState, setGameState }: MainGameProps) => {
           onClick={handleContinueClick}
         >
           Weiter
+          <Chevron
+            className={styles.continueChevron}
+            stroke="black"
+            fill="black"
+          />
         </button>
       );
     }

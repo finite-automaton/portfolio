@@ -31,15 +31,98 @@
 }
 
 .continueButton {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
   margin: var(--spacing-xl) auto 0 auto;
-  background: rgb(44, 240, 250);
-  background: radial-gradient(
-    circle,
-    rgba(44, 240, 250, 1) 0%,
-    rgba(148, 203, 233, 1) 100%
-  );
+  padding-left: var(--spacing-xl);
   color: black;
   text-shadow: 1px 1px 10px white;
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(213, 213, 218, 1) 100%
+  );
+  border: 1px black solid;
+}
+
+.continueButton::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    -90deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(213, 213, 218, 1) 100%
+  );
+  transition: background-color 1s linear;
+  transition: opacity 0.25s linear;
+  opacity: 0;
+  z-index: -1;
+  border: 1px black solid;
+}
+
+.continueButton:hover::before {
+  opacity: 1;
+}
+
+.continueButton:hover {
+  cursor: pointer;
+}
+
+.playAgainButton {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: var(--spacing-xl) auto 0 auto;
+  color: black;
+  text-shadow: 1px 1px 10px white;
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(213, 213, 218, 1) 100%
+  );
+  border: 1px black solid;
+}
+
+.playAgainButton::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    -90deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(213, 213, 218, 1) 100%
+  );
+  transition: background-color 1s linear;
+  transition: opacity 0.25s linear;
+  opacity: 0;
+  z-index: -1;
+  border: 1px black solid;
+}
+
+.playAgainButton:hover::before {
+  opacity: 1;
+}
+
+.playAgainButton:hover {
+  cursor: pointer;
+}
+
+.continueChevron {
+  transform: rotate(-90deg) scale(30%);
 }
 
 .guessResult {
@@ -74,7 +157,6 @@
   gap: var(--spacing-md);
   height: 50%;
   overflow: scroll;
-  font-size: 1.4rem;
 }
 
 .overlay {
@@ -141,21 +223,69 @@
 }
 
 .green {
+  position: relative;
   background: rgb(34, 195, 195);
   background: linear-gradient(
-    122deg,
+    90deg,
     rgba(34, 195, 195, 1) 0%,
     rgba(89, 253, 45, 1) 100%
   );
 }
 
+.green::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgb(34, 195, 195);
+  background: linear-gradient(
+    -90deg,
+    rgba(34, 195, 195, 1) 0%,
+    rgba(89, 253, 45, 1) 100%
+  );
+  transition: background-color 1s linear;
+  transition: opacity 0.25s linear;
+  opacity: 0;
+  z-index: -1;
+}
+
+.green:hover::before {
+  opacity: 1;
+}
+
 .red {
+  position: relative;
   background: rgb(239, 0, 0);
   background: linear-gradient(
-    21deg,
+    90deg,
     rgba(239, 0, 0, 1) 0%,
-    rgba(253, 127, 45, 1) 100%
+    rgb(252, 224, 137) 100%
   );
+}
+
+.red::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgb(239, 0, 0);
+  background: linear-gradient(
+    -90deg,
+    rgba(239, 0, 0, 1) 0%,
+    rgb(252, 224, 137) 100%
+  );
+  transition: background-color 1s linear;
+  transition: opacity 0.25s linear;
+  opacity: 0;
+  z-index: -1;
+}
+
+.red:hover::before {
+  opacity: 1;
 }
 
 @media (min-width: 772px) {
@@ -189,6 +319,10 @@
     padding-right: 20%;
     padding-bottom: var(--spacing-xl);
     gap: 20px;
+  }
+
+  .guessExplanation {
+    font-size: 1.4rem;
   }
 }
 

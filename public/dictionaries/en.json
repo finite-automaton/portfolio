@@ -12,7 +12,8 @@
   },
   "professionalBio": {
     "title": "My Professional Background",
-    "work": "I'm a full-stack engineer with experience managing large scale projects and teams in e-commerce, insurance and finance. I work primarily in TypeScript with React but have also worked with Scala and Python."
+    "work1": "I'm a full-stack engineer with experience managing large scale projects and teams in e-commerce, insurance and finance. I work primarily in TypeScript with React but have also worked with Scala and Python.",
+    "work2": "I am interested in Artificial Intelligence with Machine Learning. I studied AI through my Masters course and dissertation. I am particularly interested in the application of ML models to enhance the the productivity and capabilities of humans."
   },
   "professionalExperience": {
     "title": "Experience",

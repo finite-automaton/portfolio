@@ -1,11 +1,9 @@
 .professionalBioSection {
   display: flex;
   position: relative;
-  height: calc(100dvh - var(--header-height));
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  scroll-snap-align: center;
   padding: var(--spacing-xxl);
 }
 

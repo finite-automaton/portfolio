@@ -1,7 +1,6 @@
 import Image from "next/image";
 
-import hikingScotland from "../../../../../../public/hiking_scotland.jpeg";
-import hikingRain from "../../../../../../public/hiking_rain.jpg";
+import personalPhoto from "../../../../../../public/ben-nevis.jpg";
 import homeStyles from "../home.module.css";
 
 import styles from "./personalBio.module.css";
@@ -39,13 +38,13 @@ export const PersonalBio = () => {
         <div className={`${styles.imageWrapper} ${styles.desktopHidden}`}>
           <Image
             className={styles.mainImage}
-            src={hikingScotland}
+            src={personalPhoto}
             fill
-            alt=""
+            alt="snow on ben nevis"
           />
         </div>
         <div className={`${styles.imageWrapper} ${styles.mobileHidden}`}>
-          <Image className={styles.mainImage} src={hikingRain} fill alt="" />
+          <Image className={styles.mainImage} src={personalPhoto} fill alt="snow on ben nevis" />
         </div>
       </div>
     </section>

@@ -21,7 +21,8 @@ const Background = () => {
       <div className={styles.professionalBioTextContent}>
         <h1 className={homeStyles.title}>{langDict.professionalBio.title}</h1>
         <div className={homeStyles.textGroup}>
-          <p className={homeStyles.text}>{langDict.professionalBio.work}</p>
+          <p className={homeStyles.text}>{langDict.professionalBio.work1}</p>
+          <p className={homeStyles.text}>{langDict.professionalBio.work2}</p>
         </div>
       </div>
       <div className={styles.techLogos}>

@@ -3,7 +3,8 @@
 import { useContext } from "react";
 import Image from "next/image";
 
-import profilePic from "../../../../../../public/profile-cropped.webp";
+import profileCropped from "../../../../../../public/profile-cropped.jpg";
+import profile from "../../../../../../public/profile.jpg";
 import { TranslationContext } from "../../Provider/Provider";
 
 import styles from "./intro.module.css";
@@ -14,17 +15,27 @@ export const Intro = () => {
 
   return (
     <section className={styles.section}>
-      <div className={styles.profilePictureWrapper}>
-        <Image
-          className={styles.profilePicture}
-          src={profilePic}
-          alt={"Picture of John Fletcher"}
-          fill
-        />
-      </div>
       <div className={styles.contentContainer}>
+        <div className={styles.profilePictureWrapperDesktop}>
+          <Image
+            className={`${styles.profilePictureDesktop}`}
+            src={profile}
+            alt={"Picture of John Fletcher"}
+            width={3024}
+            height={4032}
+          />
+        </div>
         <div className={styles.profileWrapper}>
           <h1 className={styles.title}>{langDict.introduction.greeting}</h1>
+          <div className={styles.profilePictureWrapperMobile}>
+            <Image
+              className={`${styles.profilePictureMobile}`}
+              src={profileCropped}
+              alt={"Picture of John Fletcher"}
+              width={1525}
+              height={1525}
+            />
+          </div>
           <div className={styles.textGroup}>
             <p className={styles.text}>{langDict.introduction.jobTitle1}</p>
             <p className={styles.text}>{langDict.introduction.jobTitle2}</p>

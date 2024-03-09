@@ -6,7 +6,6 @@
   gap: var(--spacing-xxl);
   justify-content: center;
   align-items: center;
-  scroll-snap-align: center;
   padding-left: var(--spacing-xxl);
   padding-right: var(--spacing-xxl);
   padding-bottom: var(--header-height);

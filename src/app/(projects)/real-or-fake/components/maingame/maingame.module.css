@@ -32,24 +32,29 @@
 
 .continueButton {
   position: relative;
+  width: 120px;
+  height: 40px;
+  font: inherit;
+  font-size: 1.2rem;
   display: flex;
   align-items: center;
   justify-content: space-around;
   margin: var(--spacing-xl) auto 0 auto;
-  padding-left: var(--spacing-xl);
-  color: black;
-  text-shadow: 1px 1px 10px white;
+  padding: var(--spacing-sm);
   background: rgb(255, 255, 255);
   background: linear-gradient(
     90deg,
     rgba(255, 255, 255, 1) 0%,
     rgba(213, 213, 218, 1) 100%
   );
-  border: 1px black solid;
+  border: none;
+  box-shadow: black 1px 1px 1px 1px;
+  border-radius: 4px;
 }
 
 .continueButton::before {
   position: absolute;
+  border-radius: 4px;
   content: "";
   top: 0;
   right: 0;
@@ -65,7 +70,6 @@
   transition: opacity 0.25s linear;
   opacity: 0;
   z-index: -1;
-  border: 1px black solid;
 }
 
 .continueButton:hover::before {
@@ -122,7 +126,9 @@
 }
 
 .continueChevron {
-  transform: rotate(-90deg) scale(30%);
+  height: 20px;
+  width: 20px;
+  transform: rotate(-90deg);
 }
 
 .guessResult {
@@ -132,7 +138,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: var(--spacing-md);
+  gap: var(--spacing-lg);
 
   width: 80%;
   padding: var(--spacing-xl);
@@ -142,17 +148,19 @@
   margin: 0 auto;
 
   border-radius: 8px;
-  box-shadow: black 0px 1px 8px;
+  box-shadow: black 2px 2px 8px;
 
   color: black;
   text-align: center;
 
   background-color: whitesmoke;
   animation: appear 0.4s;
+  overflow: none;
 }
 
 .guessExplanation {
   display: flex;
+  font-size: 1.1rem;
   flex-direction: column;
   gap: var(--spacing-md);
   height: 50%;
@@ -168,6 +176,7 @@
   z-index: 2;
   backdrop-filter: blur(5px);
   animation: appear 0.4s;
+  overflow: none;
 }
 
 .score {
@@ -234,6 +243,7 @@
 
 .green::before {
   position: absolute;
+  border-radius: 4px;
   content: "";
   top: 0;
   right: 0;
@@ -260,13 +270,14 @@
   background: rgb(239, 0, 0);
   background: linear-gradient(
     90deg,
-    rgba(239, 0, 0, 1) 0%,
-    rgb(252, 224, 137) 100%
+    rgba(177, 47, 14, 1) 0%,
+    rgba(239, 0, 0, 1) 100%
   );
 }
 
 .red::before {
   position: absolute;
+  border-radius: 4px;
   content: "";
   top: 0;
   right: 0;
@@ -275,8 +286,8 @@
   background: rgb(239, 0, 0);
   background: linear-gradient(
     -90deg,
-    rgba(239, 0, 0, 1) 0%,
-    rgb(252, 224, 137) 100%
+    rgba(177, 47, 14, 1) 0%,
+    rgba(239, 0, 0, 1) 100%
   );
   transition: background-color 1s linear;
   transition: opacity 0.25s linear;
@@ -322,7 +333,7 @@
   }
 
   .guessExplanation {
-    font-size: 1.4rem;
+    font-size: 1.1rem;
   }
 }
 

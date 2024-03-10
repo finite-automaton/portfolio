@@ -216,7 +216,7 @@ export const MainGame = ({ gameState, setGameState }: MainGameProps) => {
     function ContinueButton() {
       return (
         <button
-          className={`${styles.continueButton} ${styles.optionButton}`}
+          className={`${styles.continueButton}`}
           onClick={handleContinueClick}
         >
           Weiter

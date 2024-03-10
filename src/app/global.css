@@ -1,5 +1,6 @@
 :root {
-  --colour-bg: #082032;
+  --colour-bg: rgb(24, 23, 36);
+  --colour-bg-tp: rgba(24, 23, 36 0);
   --colour-primary: #ecbc55;
   --colour-secondary: #54a4af;
 
@@ -19,7 +20,6 @@
   --breakpoint-mobile: 772px;
   --header-height: 104px;
 }
-
 * {
   box-sizing: border-box;
   padding: 0;

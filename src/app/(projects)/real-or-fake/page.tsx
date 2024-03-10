@@ -12,7 +12,7 @@ export default function RealOrFake() {
     phase: Phase.INTRO,
     usedIds: [],
     isCorrect: undefined,
-    cards: undefined,
+    cards: [],
     currentCardIndex: 0,
     correctCount: 0,
     totalCount: 0,
@@ -27,7 +27,6 @@ export default function RealOrFake() {
     });
   };
 
-  console.log(gameState);
   return (
     <main className={styles.main}>
       {gameState.phase === Phase.INTRO ? (

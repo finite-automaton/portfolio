@@ -22,7 +22,7 @@ export default function Review({ reviewData }: Props) {
           <span>{reviewData.oneStarCount}</span>
         </p>
       </div>
-      <p>Diese Rezension</p>
+      <div className={styles.line} />
       <div className={styles.thisReview}>
         <p className={styles.headline}>{`«${reviewData.headline}»`}</p>
         <p className={`${styles.stars} ${styles.userRating}`}>

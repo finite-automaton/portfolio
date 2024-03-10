@@ -103,8 +103,8 @@
   background: rgb(8, 32, 50);
   background: linear-gradient(
     0deg,
-    rgba(8, 32, 50, 1) 34%,
-    rgba(8, 32, 50, 0) 100%
+    var(--colour-bg) 34%,
+    var(--colour-bg-tp) 100%
   );
 }
 

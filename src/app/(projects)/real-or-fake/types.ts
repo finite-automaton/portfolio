@@ -9,7 +9,7 @@ export enum Phase {
 
 export type GameState = {
   phase: Phase;
-  cards: Review[] | undefined;
+  cards: Review[];
   currentCardIndex: number;
   isCorrect: boolean | undefined;
   usedIds: string[];

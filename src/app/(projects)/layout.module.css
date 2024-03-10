@@ -19,7 +19,7 @@
 
 .nav {
   height: var(--header-height);
-  width: 100%;
+  width: 40px;
   padding: 0 var(--spacing-lg);
   display: flex;
   justify-content: space-between;

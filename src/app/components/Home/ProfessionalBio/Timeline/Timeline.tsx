@@ -6,7 +6,6 @@ import dlgLogo from "../../../../../../public/DLG_logo_cropped.jpg";
 import tideLogo from "../../../../../../public/Tide_Logo_Blue_RGB.svg";
 import depopLogo from "../../../../../../public/depop.webp";
 import bathLogo from "../../../../../../public/bath_logo.jpeg";
-import Chevron from "../../../Icons/Chevron";
 import { TranslationContext } from "@/app/components/Provider/Provider";
 
 import styles from "./timeline.module.css";
@@ -84,9 +83,6 @@ export const Timeline = () => {
             return <TimelineCard key={card.date} {...card} />;
           })}
         </ul>
-      </div>
-      <div className={styles.scrollHint}>
-        <Chevron className={styles.scrollHintChevron} />
       </div>
     </div>
   );

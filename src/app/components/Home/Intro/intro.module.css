@@ -67,16 +67,20 @@
 
 /* Mobile */
 
-@media (max-width: 772px) {
+@media (max-width: 771px) {
   .profilePictureDesktop {
     display: none;
-    visibility: hidden;
   }
 }
 
 /* Desktop */
 
 @media (min-width: 772px) {
+  .profilePictureWrapperMobile {
+    display: none;
+    visibility: hidden;
+  }
+
   .title {
     font-size: 2rem;
     align-self: top;
@@ -94,7 +98,6 @@
   .contentContainer {
     display: flex;
     width: 100%;
-    position: relative;
     align-items: center;
   }
 
@@ -103,9 +106,13 @@
     min-width: 50%;
   }
 
-  .profilePictureWrapperMobile {
-    display: none;
-    visibility: hidden;
+  .profilePictureWrapperDesktop {
+    display: flex;
+    justify-content: center;
+    padding-top: var(--spacing-xl);
+    padding-bottom: var(--spacing-xl);
+    min-width: 50%;
+    width: auto;
   }
 
   .profilePictureDesktop {
@@ -113,16 +120,7 @@
     border-radius: 20px;
     width: auto;
     max-height: calc(90dvh - var(--header-height));
-  }
-
-  .profilePictureWrapperDesktop {
-    display: flex;
-    justify-content: center;
-    position: relative;
-    padding-top: var(--spacing-xl);
-    padding-bottom: var(--spacing-xl);
-    min-width: 50%;
-    width: auto;
+    object-fit: cover;
   }
   .text {
     text-shadow: none;

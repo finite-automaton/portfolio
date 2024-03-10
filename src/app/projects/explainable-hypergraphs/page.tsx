@@ -98,6 +98,18 @@ export default function ExplainabeHypergraphs() {
       </p>
 
       <p>The dissertation achieved a distinction award.</p>
+      <p>
+        The code is available{" "}
+        <Link
+          href={
+            "https://github.com/finite-automaton/explainable-hypergraphs-dementia-prediction"
+          }
+          className={styles.link}
+        >
+          here
+        </Link>
+        .
+      </p>
       <h2>Video overview</h2>
       <div className={styles.videoContainer}>
         <iframe
@@ -111,8 +123,11 @@ export default function ExplainabeHypergraphs() {
       </div>
       <h2>Read the dissertation</h2>
       <p>
-        You can download the dissertation <Link href={url} className={styles.link}>here</Link> or read
-        the dissertation below.
+        You can download the dissertation{" "}
+        <Link href={url} className={styles.link}>
+          here
+        </Link>{" "}
+        or read the dissertation below.
       </p>
       <div ref={setContainerRef}>
         <Document

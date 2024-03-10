@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 import personalPhotoHor from "../../../../../public/switzerland-hor-crop.jpg";
-import personalPhotoVer from "../../../../../public/switzerland-ver-crop.jpg";
+import personalPhotoVer from "../../../../../public/switzerland-large.jpg";
 import homeStyles from "../home.module.css";
 
 import styles from "./personalBio.module.css";
@@ -14,8 +14,20 @@ export const PersonalBio = () => {
   return (
     <section className={homeStyles.section}>
       <div className={styles.contentWrapper}>
+        <div
+          className={`${styles.verticalImageContainer} ${styles.mobileHidden}`}
+        >
+          <Image
+            className={`${styles.mainImage}`}
+            src={personalPhotoVer}
+            fill
+            alt="hiking in the swiss alps"
+          />
+        </div>
         <div className={styles.personalBioWrapper}>
-          <h1 className={homeStyles.title}>Interests</h1>
+          <h1 className={homeStyles.title}>
+            {langDict.personalBio.personalTitle}
+          </h1>
           <div className={homeStyles.textGroup}>
             <p className={homeStyles.text}>{langDict.personalBio.personal1}</p>
             <p />
@@ -38,16 +50,8 @@ export const PersonalBio = () => {
         </div>
         <div className={`${styles.imageWrapper} ${styles.desktopHidden}`}>
           <Image
-            className={styles.mainImage}
+            className={`${styles.mainImage} ${styles.desktopHidden}`}
             src={personalPhotoHor}
-            fill
-            alt="hiking in the swiss alps"
-          />
-        </div>
-        <div className={`${styles.imageWrapper} ${styles.mobileHidden}`}>
-          <Image
-            className={styles.mainImage}
-            src={personalPhotoVer}
             fill
             alt="hiking in the swiss alps"
           />

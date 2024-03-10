@@ -113,7 +113,6 @@
     border-radius: 20px;
     width: auto;
     max-height: calc(90dvh - var(--header-height));
-    /* max-width: 600px; */
   }
 
   .profilePictureWrapperDesktop {

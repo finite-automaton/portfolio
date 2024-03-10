@@ -9,11 +9,16 @@ import { TranslationContext } from "../Provider/Provider";
 
 import styles from "./navigation.module.css";
 
+const translationExclusionPages = ["real-or-fake"];
+
 export const Navigation = () => {
   const { currentLang, currentLangDict, setCurrentLang } =
     useContext(TranslationContext);
   const [isNavOpen, setIsNavOpen] = useState(false);
   const pathName = usePathname();
+  const excludeTranslations = translationExclusionPages.some((page) =>
+    pathName.includes(page)
+  );
 
   const NavItem = ({ href, text }: { href: string; text: string }) => {
     return (
@@ -22,7 +27,9 @@ export const Navigation = () => {
           href={href}
           className={`
             ${
-              pathName === href ? styles.navItemActive : styles.navItemInactive
+              pathName.includes(href)
+                ? styles.navItemActive
+                : styles.navItemInactive
             }`}
           onClick={() => {
             setIsNavOpen(false);
@@ -50,7 +57,7 @@ export const Navigation = () => {
   };
 
   const LangSelector = () => {
-    return (
+    return excludeTranslations ? null : (
       <div className={styles.langSelector}>
         <button
           className={`${styles.navItem} ${styles.langButton} ${

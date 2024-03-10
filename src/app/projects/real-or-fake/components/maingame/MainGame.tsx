@@ -6,7 +6,7 @@ import { GameState, Phase, Review as ReviewT } from "../../types";
 import Review from "../review/Review";
 
 import styles from "./maingame.module.css";
-import Chevron from "@/app/(site)/components/Icons/Chevron";
+import Chevron from "@/app/components/Icons/Chevron";
 
 type MainGameProps = {
   gameState: GameState;
@@ -157,7 +157,7 @@ export const MainGame = ({ gameState, setGameState }: MainGameProps) => {
   function PlayAgainButton() {
     return (
       <button
-        className={`${styles.playAgainButton} ${styles.optionButton}`}
+        className={`${styles.playAgainButton}`}
         onClick={handlePlayAgain}
       >
         Wieder Spielen

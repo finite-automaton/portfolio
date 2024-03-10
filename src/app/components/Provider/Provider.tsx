@@ -1,7 +1,7 @@
 "use client";
 
 import { createContext, useEffect, useState } from "react";
-import dictEn from "../../../../../public/dictionaries/en.json";
+import dictEn from "../../../../public/dictionaries/en.json";
 import { LANGS, Dictionary } from "@/app/dictionaries";
 import { getLanguageDictionary } from "@/app/actions";
 

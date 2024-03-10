@@ -3,8 +3,8 @@
 import { useContext } from "react";
 import Image from "next/image";
 
-import profileCropped from "../../../../../../public/profile-cropped.jpg";
-import profile from "../../../../../../public/profile.jpg";
+import profileCropped from "../../../../../public/profile-cropped.jpg";
+import profile from "../../../../../public/profile.jpg";
 import { TranslationContext } from "../../Provider/Provider";
 
 import styles from "./intro.module.css";

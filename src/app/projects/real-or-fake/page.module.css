@@ -1,0 +1,13 @@
+.main {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: var(--spacing-xl) var(--spacing-xl) 0 var(--spacing-xl);
+  color: white;
+}
+
+@media (min-width: 772px) {
+  .main {
+    padding: var(--spacing-xl) 20% 0 20% ;
+  }
+}

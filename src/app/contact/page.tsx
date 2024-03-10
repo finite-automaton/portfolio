@@ -3,8 +3,8 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import linkedInLogo from "../../../../public/linkedin.png";
-import githubLogo from "../../../../public/github-mark-white.png";
+import linkedInLogo from "../../../public/linkedin.png";
+import githubLogo from "../../../public/github-mark-white.png";
 import { TranslationContext } from "../components/Provider/Provider";
 
 import { create } from "@/app/actions";

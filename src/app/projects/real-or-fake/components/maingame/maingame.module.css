@@ -24,6 +24,7 @@
   border: none;
   color: white;
   text-shadow: 2px 2px 2px black;
+  box-shadow: black 1px 1px 1px;
 }
 
 .optionButton:hover {
@@ -81,6 +82,16 @@
 }
 
 .playAgainButton {
+  border-radius: 4px;
+  font: inherit;
+  font-size: 1.1rem;
+  padding: var(--spacing-md);
+
+  color: white;
+  text-shadow: 2px 2px 2px black;
+  box-shadow: black 1px 1px 1px;
+
+
   position: relative;
   display: flex;
   align-items: center;
@@ -114,7 +125,7 @@
   transition: opacity 0.25s linear;
   opacity: 0;
   z-index: -1;
-  border: 1px black solid;
+  border-radius: 4px;
 }
 
 .playAgainButton:hover::before {
@@ -142,7 +153,7 @@
 
   width: 80%;
   padding: var(--spacing-xl);
-  top: 24px;
+  top: var(--spacing-xxxl);
   left: 0;
   right: 0;
   margin: 0 auto;
@@ -192,11 +203,11 @@
 }
 
 .playAgain {
-  width: 200px;
+  width: 400px;
   height: 40px;
   font: inherit;
   margin: var(--spacing-xl) auto 0 auto;
-  font-size: 1.1rem;
+  font-size: 1rem;
 }
 
 .playAgain:hover {
@@ -210,25 +221,29 @@
 
 .finalResult {
   position: absolute;
-  color: black;
-  font-size: 1.4rem;
-  text-align: center;
-  padding: var(--spacing-xl);
-  border-radius: 8px;
-  border: solid 2px black;
-  top: 24px;
-  left: 0;
-  right: 0;
-  margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
   gap: var(--spacing-md);
-  z-index: 3;
+
+  color: black;
+  font-size: 1.4rem;
+  text-align: center;
   background-color: white;
+
+  padding: var(--spacing-xl);
+  border-radius: 8px;
+  border: solid 2px black;
+
   width: 80%;
-  height: 50%;
+  min-height: 400px;
+  top: var(--spacing-xxxl);
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+
+  z-index: 3;
 }
 
 .green {

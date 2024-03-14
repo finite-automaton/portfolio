@@ -1,0 +1,147 @@
+/* Shared */
+
+.section {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+  height: calc(100dvh - var(--header-height));
+  padding: 0 var(--spacing-xxxl);
+}
+
+.title {
+  font-size: 2rem;
+  align-self: top;
+  animation: fadeIn linear 2s;
+  color: var(--colour-text);
+  text-align: center;
+}
+
+.text {
+  font-size: 1.5rem;
+  text-align: center;
+  color: var(--colour-text);
+  animation: fadeIn linear 2s 2s both;
+  text-wrap: nowrap;
+  text-shadow: -1px 1px 0 #000, 1px 1px 0 #000, 1px -1px 0 #000,
+    -1px -1px 0 #000;
+}
+
+.chevron {
+  position: absolute;
+  height: 50px;
+  width: 50px;
+  bottom: 16px;
+  animation: fadeIn 2s 2s both, oscillate 3s 2s ease infinite;
+}
+
+.profileWrapper {
+  position: relative;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: calc(100dvh - var(--header-height));
+  padding: var(--spacing-xxxl) 0;
+}
+
+.profilePictureMobile {
+  border-radius: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+.profilePictureWrapperMobile {
+  width: 100%;
+  max-width: 360px;
+}
+
+.textGroup {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Mobile */
+
+@media (max-width: 771px) {
+  .profilePictureDesktop {
+    display: none;
+  }
+}
+
+/* Desktop */
+
+@media (min-width: 772px) {
+  .profilePictureWrapperMobile {
+    display: none;
+    visibility: hidden;
+  }
+
+  .title {
+    font-size: 2rem;
+    align-self: top;
+    animation: fadeIn linear 2s;
+    color: var(--colour-text);
+    text-align: center;
+    margin-bottom: var(--spacing-xxxl);
+  }
+
+  .textGroup {
+    width: 50%;
+    padding: var(--spacing-xl);
+  }
+
+  .contentContainer {
+    display: flex;
+    width: 100%;
+    align-items: center;
+  }
+
+  .profileWrapper {
+    justify-content: center;
+    min-width: 50%;
+  }
+
+  .profilePictureWrapperDesktop {
+    display: flex;
+    justify-content: center;
+    padding-top: var(--spacing-xl);
+    padding-bottom: var(--spacing-xl);
+    min-width: 50%;
+    width: auto;
+  }
+
+  .profilePictureDesktop {
+    height: 100%;
+    border-radius: 20px;
+    width: auto;
+    max-height: calc(90dvh - var(--header-height));
+    object-fit: cover;
+  }
+  .text {
+    text-shadow: none;
+  }
+}
+
+@keyframes oscillate {
+  0,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(16px);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

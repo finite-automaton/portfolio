@@ -1,0 +1,96 @@
+.main {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: var(--spacing-xl);
+  gap: var(--spacing-xl);
+  color: white;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.document {
+  position: relative;
+}
+
+.pdfMenu {
+  position: absolute;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 20px;
+  width: 30%;
+  height: 6%;
+  background-color: lightgrey;
+  color: black;
+  bottom: 5%;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  opacity: 0.2;
+}
+
+.pdfMenu:hover {
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+
+.leftChevron {
+  height: 50%;
+  transform: rotate(90deg);
+}
+
+.rightChevron {
+  height: 50%;
+  transform: rotate(-90deg);
+}
+
+.clickArea {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 90%;
+  width: 20%;
+}
+
+.clickAreaDisable {
+  cursor: default;
+}
+
+.clickArea:hover {
+  cursor: pointer;
+}
+
+.videoContainer {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding-top: 56.25%;
+}
+
+.video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.link {
+  text-decoration: underline;
+}
+
+@media (min-width: 772px) {
+  .main {
+    padding: 0 20%;
+  }
+}
+
+@media (min-width: 1280px) {
+  .main {
+    padding: 0 30%;
+  }
+}

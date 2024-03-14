@@ -1,7 +1,8 @@
 import Link from "next/link";
 import Chevron from "../../Icons/Chevron";
 import styles from "./links.module.css";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { TranslationContext } from "../../Provider/Provider";
 
 const LinkOut = ({
   href,
@@ -25,6 +26,7 @@ const LinkOut = ({
 };
 
 export const Links = () => {
+  const { currentLangDict: langDict } = useContext(TranslationContext);
   const [isIntersecting, setIsIntersecting] = useState(false);
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -41,23 +43,16 @@ export const Links = () => {
     <section className={styles.section} id="links">
       <LinkOut
         href={"/projects"}
-        content="Projects"
+        content={langDict.navigation.projects}
         animation={
           isIntersecting ? `${styles.slideIn} ${styles.animationDelay1}` : ""
         }
       />
       <LinkOut
         href={"/contact"}
-        content="Contact"
+        content={langDict.navigation.contact}
         animation={
           isIntersecting ? `${styles.slideIn} ${styles.animationDelay2}` : ""
-        }
-      />
-      <LinkOut
-        href={"/blog"}
-        content="Blog"
-        animation={
-          isIntersecting ? `${styles.slideIn} ${styles.animationDelay3}` : ""
         }
       />
     </section>

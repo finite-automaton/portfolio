@@ -44,7 +44,6 @@ export const Navigation = () => {
   const navLinks = [
     { href: "/", text: currentLangDict.navigation.home },
     { href: "/projects", text: currentLangDict.navigation.projects },
-    { href: "/blog", text: currentLangDict.navigation.blog },
     { href: "/contact", text: currentLangDict.navigation.contact },
   ];
 

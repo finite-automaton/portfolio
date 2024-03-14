@@ -33,6 +33,28 @@
     "personal5": "Advanced German 🇩🇪🇨🇭",
     "personal6": "Intermediate French 🇫🇷"
   },
+  "projects": {
+    "title": "Projects",
+    "hypergraphTitle": "Explainable Hypergraphs",
+    "hypergraphDescriptionShort": "An explainable ML model to predict dementia progression",
+    "hypergraphDescriptionLong": "My MSc Computer Science dissertation project. Explores using a cutting edge hypergraph neural network to classify dementia progression risk and produce explanations for the classification.",
+    "realorfakeTitle": "Real or Fake",
+    "realorfakeDescriptionShort": "Can you spot if a product review is genuine? German language.",
+    "realorfakeDescriptionLong": "Can you spot if a product review is genuine? This quiz uses real product reviews and challenges you to spot which ones are real and which are fake. German language."
+  },
+  "dissertation": {
+    "title": "Explainable Hypergraph Neural Networks for the Prediction of Dementia Progression",
+    "description1": "I conducted my MSc Computer Science dissertation in the field of medical informatics. Specifically, I wanted to explore if it is possible to reliably classify the risk of dementia progression using only clinical data with an emerging Machine Learning technique using hypergraphs to express relationships between risk factors.",
+    "description2": "The project was succesful and achieved a very good classifiction accuracy of 79% supported by robust capability distinguishing true/false negative and positive cases.",
+    "description3": "The dissertation achieved a distinction award.",
+    "description4": "The code is available",
+    "description5": "here",
+    "videoTitle": "Video overview",
+    "documentTitle": "Read the dissertation",
+    "documentDescription1": "You can download the dissertation",
+    "documentDescription2": "here",
+    "documentDescription3": "or read the dissertation below."
+  },
   "contact": {
     "linkedin": "Connect with me on linkedIn.",
     "sendEmail": "Send me an e-mail:",

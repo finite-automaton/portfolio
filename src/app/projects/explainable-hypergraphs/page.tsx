@@ -5,12 +5,13 @@ import styles from "./page.module.css";
 
 import { useResizeObserver } from "@wojtekmaj/react-hooks";
 
-import { useCallback, useState } from "react";
+import { useCallback, useContext, useState } from "react";
 import type { PDFDocumentProxy } from "pdfjs-dist";
 import "react-pdf/dist/esm/Page/AnnotationLayer.css";
 import "react-pdf/dist/esm/Page/TextLayer.css";
 import Chevron from "@/app/components/Icons/Chevron";
 import Link from "next/link";
+import { TranslationContext } from "@/app/components/Provider/Provider";
 
 const options = {
   cMapUrl: "/cmaps/",
@@ -25,6 +26,7 @@ const resizeObserverOptions = {};
 pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.js`;
 
 export default function ExplainabeHypergraphs() {
+  const { currentLangDict: langDict } = useContext(TranslationContext);
   const [numPages, setNumPages] = useState<number>();
   const [pageNumber, setPageNumber] = useState<number>(1);
   const [containerRef, setContainerRef] = useState<HTMLElement | null>(null);
@@ -79,38 +81,24 @@ export default function ExplainabeHypergraphs() {
 
   return (
     <main className={styles.main}>
-      <h1>
-        Explainable Hypergraph Neural Networks for the Prediction of Dementia
-        Progression
-      </h1>
-      <p>
-        I conducted my MSc Computer Science dissertation in the filed of medical
-        informatics. Specifically, I wanted to explore if it is possible to
-        reliably classify the risk of dementia progression using only clinical
-        data with an emerging Machine Learning technique using hypergraphs to
-        express relationships between risk factors.
-      </p>
+      <h1>{langDict.dissertation.title}</h1>
+      <p>{langDict.dissertation.description1}</p>
+      <p>{langDict.dissertation.description2}</p>
+      <p>{langDict.dissertation.description3}</p>
 
       <p>
-        The project was succesful and achieved a very good classifiction
-        accuracy of 79% supported by robust capability distinguishing true/false
-        negative and positive cases.
-      </p>
-
-      <p>The dissertation achieved a distinction award.</p>
-      <p>
-        The code is available{" "}
+        {langDict.dissertation.description4}{" "}
         <Link
           href={
             "https://github.com/finite-automaton/explainable-hypergraphs-dementia-prediction"
           }
           className={styles.link}
         >
-          here
+          {langDict.dissertation.description5}
         </Link>
         .
       </p>
-      <h2>Video overview</h2>
+      <h2>{langDict.dissertation.videoTitle}</h2>
       <div className={styles.videoContainer}>
         <iframe
           src="https://www.youtube.com/embed/3XZBMwB8N64"
@@ -121,13 +109,13 @@ export default function ExplainabeHypergraphs() {
           title="Explainable Hypergraphs"
         />
       </div>
-      <h2>Read the dissertation</h2>
+      <h2>{langDict.dissertation.documentTitle}</h2>
       <p>
-        You can download the dissertation{" "}
+        {langDict.dissertation.documentDescription1}{" "}
         <Link href={url} className={styles.link}>
-          here
+          {langDict.dissertation.documentDescription2}
         </Link>{" "}
-        or read the dissertation below.
+        {langDict.dissertation.documentDescription3}
       </p>
       <div ref={setContainerRef}>
         <Document
@@ -136,7 +124,7 @@ export default function ExplainabeHypergraphs() {
           options={options}
           className={styles.document}
         >
-          <Page pageNumber={pageNumber} width={containerWidth} />
+          <Page pageNumber={pageNumber} width={containerWidth || 400} />
           <div className={styles.pdfMenu}>
             <PageSelector down />
             <span>

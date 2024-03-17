@@ -19,7 +19,7 @@ const options = {
 };
 
 const url =
-  "httpss://nrsfmmznkpuwntpz.public.blob.vercel-storage.com/dissertation-Gqw6lf3Kn3sTVc8lnkY36txWCNAJ2M.pdf";
+  "https://nrsfmmznkpuwntpz.public.blob.vercel-storage.com/dissertation-Gqw6lf3Kn3sTVc8lnkY36txWCNAJ2M.pdf";
 
 const resizeObserverOptions = {};
 
@@ -90,7 +90,7 @@ export default function ExplainabeHypergraphs() {
         {langDict.dissertation.description4}{" "}
         <Link
           href={
-            "httpss://github.com/finite-automaton/explainable-hypergraphs-dementia-prediction"
+            "https://github.com/finite-automaton/explainable-hypergraphs-dementia-prediction"
           }
           className={styles.link}
         >
@@ -101,7 +101,7 @@ export default function ExplainabeHypergraphs() {
       <h2>{langDict.dissertation.videoTitle}</h2>
       <div className={styles.videoContainer}>
         <iframe
-          src="httpss://www.youtube.com/embed/3XZBMwB8N64"
+          src="https://www.youtube.com/embed/3XZBMwB8N64"
           className={styles.video}
           frameBorder="0"
           allow="autoplay; encrypted-media"

@@ -21,7 +21,7 @@ export default function Intro({ handleStartButtonClick }: Props) {
       </p>
       <p className={styles.text}>Daten von:</p>
       <Link
-        href="httpss://github.com/hdaSprachtechnologie/OpinionSpam"
+        href="https://github.com/hdaSprachtechnologie/OpinionSpam"
         target="_blank"
         rel="noopener noreferrer"
         className={styles.linkText}

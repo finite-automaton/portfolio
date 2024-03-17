@@ -7,7 +7,7 @@ export async function getLanguageDictionary(language: LANGS) {
 }
 
 export async function create(formData: FormData) {
-  await fetch("https://api.resend.com/emails", {
+  await fetch("httpss://api.resend.com/emails", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

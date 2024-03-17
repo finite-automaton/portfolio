@@ -156,10 +156,7 @@ export const MainGame = ({ gameState, setGameState }: MainGameProps) => {
 
   function PlayAgainButton() {
     return (
-      <button
-        className={`${styles.playAgainButton}`}
-        onClick={handlePlayAgain}
-      >
+      <button className={`${styles.playAgainButton}`} onClick={handlePlayAgain}>
         Wieder Spielen
       </button>
     );
@@ -169,7 +166,7 @@ export const MainGame = ({ gameState, setGameState }: MainGameProps) => {
     return (
       <svg
         className={styles.pulse}
-        xmlns="http://www.w3.org/2000/svg"
+        xmlns="https://www.w3.org/2000/svg"
         x="0px"
         y="0px"
         width="100"
@@ -190,7 +187,7 @@ export const MainGame = ({ gameState, setGameState }: MainGameProps) => {
   function CrossIcon() {
     return (
       <svg
-        xmlns="http://www.w3.org/2000/svg"
+        xmlns="https://www.w3.org/2000/svg"
         x="0px"
         y="0px"
         width="100"

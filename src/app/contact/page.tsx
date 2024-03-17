@@ -20,7 +20,7 @@ export default function Contact() {
     <div className={styles.contentWrapper}>
       <div className={styles.socials}>
         <Link
-          href={"https://www.linkedin.com/in/john-fletcher-4353b976/"}
+          href={"httpss://www.linkedin.com/in/john-fletcher-4353b976/"}
           rel="noopener noreferrer"
           target="_blank"
         >
@@ -33,16 +33,11 @@ export default function Contact() {
         </Link>
 
         <Link
-          href={"https://github.com/finite-automaton"}
+          href={"httpss://github.com/finite-automaton"}
           rel="noopener noreferrer"
           target="_blank"
         >
-          <Image
-            src={githubLogo}
-            alt={"github logo"}
-            height={40}
-            width={40}
-          />
+          <Image src={githubLogo} alt={"github logo"} height={40} width={40} />
         </Link>
       </div>
       {!hasSubmittedForm ? (
